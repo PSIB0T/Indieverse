@@ -7,6 +7,7 @@ import { MusicService } from './music.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  paused = false;
 
   title: string;
   backgroundStyle: any;
@@ -33,6 +34,14 @@ export class AppComponent implements OnInit {
       this.handleRandom();
     }
 
+    handleUpdatePosition(new_pos: number) {
+      let duration: number =  this.musicService.audio.duration;
+      this.position = new_pos;
+      duration *= new_pos;
+      this.musicService.audio.currentTime = duration;
+      this.elapsed = this.musicService.formatTime(this.musicService.audio.currentTime);
+    }
+
     handleTimeUpdate(e) {
       const elapsed: number =  this.musicService.audio.currentTime;
       const duration: number =  this.musicService.audio.duration;
@@ -56,6 +65,22 @@ export class AppComponent implements OnInit {
       const randomTrack = this.musicService.randomTrack(this.tracks);
       this.playMusic(randomTrack)
 
+    }
+
+    handlePausePlay() {
+      if (this.musicService.audio.paused) {
+        this.paused = false;
+        this.musicService.audio.play()
+      } else {
+        this.paused = true;
+        this.musicService.audio.pause()
+      }
+    }
+
+    handleStop() {
+      this.musicService.audio.pause();
+      this.musicService.audio.currentTime = 0;
+      this.paused = true;
     }
 
     composeBackgroundStyle(url) {
