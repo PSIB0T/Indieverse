@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
 * {
     box-sizing: border-box;
     &:before, &:after {
@@ -12,7 +14,7 @@ body, html {
 }
 
 body {
-    background: #000000;
+    background: #1d1c1c;
 
     .ui-autocomplete, .ui-inputtext {
         width: 100%;

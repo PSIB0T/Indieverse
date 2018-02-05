@@ -1,0 +1,10 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Enter music name" class="search-music" matInput [formControl]="musicForm" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option (onSelectionChange)="select($event)" *ngFor="let option of filteredOptions | async" [value]="option.title">
+        {{ option.title }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
