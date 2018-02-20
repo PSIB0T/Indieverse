@@ -1,0 +1,72 @@
+
+
+.hero {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image {
+    background-image: url('https://i0.wp.com/shadesofnoir.org.uk/wp-content/uploads/2017/07/Image-1.jpeg?resize=1112%2C695');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.hero-text {
+    text-align: center;
+    color: white;
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    
+}
+
+.hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+.hero-text button:hover {
+    background-color: #555;
+}
+
+.hero-text h1 {
+    border: 10px solid black;
+    background-color: rgba(255, 255, 255, 0.856);
+    color: black;
+    padding: 2px;
+}
+
+.blur-effect {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    color: rgba(130, 130, 130, 0.5);
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
