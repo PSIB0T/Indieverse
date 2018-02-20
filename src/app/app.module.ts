@@ -13,6 +13,7 @@ import { MusicService } from 'app/music.service';
 import { HttpModule } from '@angular/http';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { MusicComponent } from './music/music.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './/app-routing.module';
     MusicDetailsComponent,
     PlayerComponent,
     ProgressComponent,
-    HomeComponent
+    HomeComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,
