@@ -1,3 +1,4 @@
+
 .hero {
     height: 100vh;
     overflow: hidden;
@@ -123,7 +124,7 @@ nav a {
 .menu a {
     clear: right;
     text-decoration: none;
-    color: gray;
+    color: white;
     margin: 0 10px;
     line-height: 70px;
     text-transform: uppercase;
@@ -142,10 +143,31 @@ label {
     display: none;
 }
 
+
+
 section {
     padding: 2em;
+    color: white;
 }
 
+#section1 {
+    background: linear-gradient(to right, rgba(149, 5, 206, 0.226) , rgb(203, 4, 230));
+}
+#section2 {
+    background: linear-gradient(to left,  rgb(149, 5, 206) , rgb(203, 4, 230));
+}
+#section3 {
+    background: linear-gradient(to right,  rgb(149, 5, 206) , rgb(203, 4, 230));
+}
+#section4 {
+    background: linear-gradient(to left,  rgb(149, 5, 206) , rgb(203, 4, 230));
+}
+#section5 {
+    background: linear-gradient(to right,  rgb(149, 5, 206) , rgb(203, 4, 230));
+}
+#section6 {
+    background: linear-gradient(to left,  rgb(149, 5, 206) , rgb(203, 4, 230));
+}
 footer {
     color: white;
     background-color: black;
@@ -200,5 +222,4 @@ footer {
         font-size: 3em;
     }
 }
-    
 
