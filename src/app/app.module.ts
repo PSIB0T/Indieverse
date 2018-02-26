@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MusicComponent } from './music/music.component';
+import {DashboardModule} from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MusicComponent } from './music/music.component';
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatInputModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DashboardModule
   ],
   providers: [
     ApiService,
