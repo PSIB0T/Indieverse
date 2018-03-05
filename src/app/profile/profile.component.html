@@ -1,3 +1,15 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+  <div class="profile" [ngStyle]="{'background-image':'url('+ artist_img_url +')'}">
+    <h1>{{artist_name}}</h1>
+    <p>{{artist_desc}}</p>
+    <button class="button-black">follow</button>
+  </div>
+  <div class="songs">
+    <h2>Top Songs</h2>
+    <ol>
+      <li *ngFor="let song of top_songs">
+        {{ song }}
+      </li>
+    </ol>
+  </div>
+</div>

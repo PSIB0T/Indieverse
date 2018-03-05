@@ -1,0 +1,43 @@
+.container {
+    margin: 1em;
+}
+
+.profile {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1.2em;
+    text-align: center;
+}
+
+.button-black {
+    width: 200px;
+    height: 60px;
+    font-size: 1.3em;
+    border-radius: 50px;
+    color: white;
+    background: black;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background, color 0.2s ease-in;
+}
+
+.button-black:hover {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+}
+
+
+.songs {
+    background-color: rgb(25, 2, 44);
+    padding: 1em;
+    width: 100%;
+    color: white;
+}
+
+.songs ol li {
+    font-size: 1.5em;
+    margin: 1.2em;
+}
