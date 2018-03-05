@@ -11,6 +11,9 @@ import { ProgressComponent } from './progress/progress.component';
 import { ApiService } from './api.service';
 import { MusicService } from 'app/music.service';
 import { HttpModule } from '@angular/http';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { MusicComponent } from './music/music.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { HttpModule } from '@angular/http';
     MusicSearchComponentComponent,
     MusicDetailsComponent,
     PlayerComponent,
-    ProgressComponent
+    ProgressComponent,
+    HomeComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,8 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    AppRoutingModule
   ],
   providers: [
     ApiService,

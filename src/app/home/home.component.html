@@ -1,0 +1,88 @@
+<div class="hero">
+  <div class="hero-image"></div>
+  <div class="nav">
+    <label for="toggle">&#9776;</label>
+    <input type="checkbox" id="toggle" />
+    <div class="menu">
+      <a href="">home</a>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+      <a href="#">Sign Up</a>
+    </div>
+  </div>
+  <div class="hero-text">
+    <h1>Indieverse</h1>
+    <p>A platform built for upcoming Musicians like you!</p>
+  </div>
+  <div class="hero-link" title="know more">
+    <a href="#section1">
+      <i class="fas fa-chevron-circle-down"></i>
+    </a>
+  </div>
+</div>
+
+<section id="section1">
+  <div class="section-child-1">
+    <div class="section-content">
+      <div class="icon">
+          <span class="fas fa-fire icon-content"></span>
+      </div>
+      <h3>A stage to express your talent</h3>
+      <p>Publish your music for the millions of users to hear and in turn increase your fanbase.
+      </p>
+    </div>
+    <div class="section-content">
+      <div class="icon">
+        <span class="fa fa-money icon-content"></span>
+      </div>
+      <h3>A meaningful revenue stream</h3>
+      <p>Users can pay a revenue of their choice so that you can continue publishing your awesome work.
+      </p>    
+    </div> 
+    <div class="section-content">
+      <div class="icon">
+        <span class="fa fa-bolt icon-content"></span>
+      </div>
+      <h3>A place without noise</h3>
+      <p>No adverts will be bothering you while you enjoy the music experience of your 
+        favourite artists.
+      </p>
+    </div>
+  </div>
+  <div class="section-child-2">
+    <button class="button-black">Sign up</button>
+  </div>
+
+</section>
+
+  <section id="section2">
+    <div class="background-image">
+
+    </div>
+    <div class="section-text">
+      <h1>A podium without restrictions</h1>
+      <p>Stream limitless amount of music from your favourite artists without any restrictions.
+      </p>
+    </div>
+
+  </section>
+
+<section id="section3">
+  <h1>Build a profile</h1>
+  <p>With a page that enlists your descpription and your current songs, you can attract those adorable crawlers.</p>
+  <div class="profile-card-parent">
+    <div class="profile-card" *ngFor="let artist of artists">
+        <div class="artist">
+          <img src="{{artist.image}}" class="artist-image" alt="{{artist.name}}">
+          <h2 class="artist-name">{{artist.name}}</h2>
+        </div>
+        <div class="sub-count">
+          <h4 class="sub-count-text">Subscriber count: {{artist.sub_count | number}}</h4>
+        </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2018 Indieverse</p>
+</footer>
