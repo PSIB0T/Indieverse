@@ -167,7 +167,7 @@ section {
 #section1 {
     background: white;
     color: black;
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -176,6 +176,7 @@ section {
 #section1 .section-child-1 {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .button-black {
@@ -307,6 +308,10 @@ footer {
         font-size: 4em;
     }
 
+    #section2 .section-text h1{
+        font-size: 4em;
+    }
+
 
     label {
         display: block;
@@ -326,6 +331,7 @@ footer {
     #toggle:checked + .menu {
         display: block;
     }
+
     
 }
 
@@ -339,6 +345,10 @@ footer {
     }
     .hero-link a {
         font-size: 3em;
+    }
+
+    #section2 .section-text h1{
+        font-size: 2.5em;
     }
 }
 
