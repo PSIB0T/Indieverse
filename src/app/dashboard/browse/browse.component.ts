@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,
+         OnInit,
+         HostListener,
+         ViewChild,
+         ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-browse',
@@ -7,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowseComponent implements OnInit {
 
+  @ViewChild('browserNav', {read: ElementRef}) browser_nav: ElementRef;
   constructor() { }
 
   ngOnInit() {

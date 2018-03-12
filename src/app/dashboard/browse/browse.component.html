@@ -1,3 +1,23 @@
 <div class="main">
-  <h1 class="cat-title">Browse</h1>
+  <div class="search-container">
+    <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+    <input type="text" class="search-box" name="search" placeholder="search">
+  </div>
+  <div class="browse-content">
+    <h1 class="cat-title">Browse</h1>
+      <nav class="browse-nav">
+        <ul>
+          <li class="selected">
+            <a [routerLink]="['/dashboard', {outlets: {'browse': ['genre']}}]">
+              Genres
+            </a>
+          </li>
+          <li>Charts</li>
+          <li>Discover</li>
+          <li>New Releases</li>
+        </ul>
+      </nav>
+  </div>
+
+  <router-outlet name="browse"></router-outlet>
 </div>
