@@ -4,12 +4,45 @@
     <p>{{artist_desc}}</p>
     <button class="button-black">follow</button>
   </div>
-  <div class="songs">
-    <h2>Top Songs</h2>
-    <ol>
-      <li *ngFor="let song of top_songs">
-        {{ song }}
-      </li>
-    </ol>
+  <div class="main">
+    <div class="songs">
+      <h2>Top Songs</h2>
+      <ol>
+        <li *ngFor="let song of top_songs">
+          {{ song }}
+        </li>
+      </ol>
+    </div>
+    <div class="albums">
+      <h2>Albums</h2>
+      <ul>
+        <li>
+          <div class="album_item">
+            <img src="https://goo.gl/e7kCjZ" alt="">
+            <p>Grateful</p>
+          </div>
+        </li>
+        <li>
+          <div class="album_item">
+            <img src="https://goo.gl/e7kCjZ" alt="">
+            <p>Major Key</p>
+          </div>
+
+        </li>
+        <li>
+          <div class="album_item">
+            <img src="https://goo.gl/e7kCjZ" alt="">
+            <p>I Changed a Lot</p>
+          </div>
+
+        </li>
+        <li>
+          <div class="album_item">
+            <img src="https://goo.gl/e7kCjZ" alt="">
+            <p>Suffering from Success</p>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
