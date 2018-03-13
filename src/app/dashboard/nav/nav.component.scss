@@ -1,6 +1,11 @@
 @import '~app/sass/variables';
 @import '~app/sass/fonts';
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .side-nav {
     padding-top: 0.6em;
     position: fixed;
