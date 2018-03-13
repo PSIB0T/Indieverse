@@ -6,19 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./genre.component.scss']
 })
 export class GenreComponent implements OnInit {
-  artists = [{
-    name: 'DJ Khaled',
-    image: 'https://images.complex.com/complex/image/upload/c_fill,f_auto,g_faces:auto,h_900,q_auto,w_900/m6mjx9nhyk72xtqj3e2p.jpg',
-    sub_count: 13232
+  genres = [{
+    name: 'Heavy Metal',
+    image: require('assets/images/icons/metal.svg'),
   }, {
-    name: 'Ed Sheeran',
-    image: 'https://images.shazam.com/artistart/a40769350_s400.jpg',
-    sub_count: 324143
+    name: 'Party',
+    image: require('assets/images/icons/disco.svg'),
   }, {
-    name: 'Britney Spears',
-    image: 'https://pbs.twimg.com/profile_images/955803874463571969/-R8etznz_400x400.jpg',
-    sub_count: 306144
-  }]
+    name: 'Jazz',
+    image: require('assets/images/icons/jazz.svg'),
+  }, {
+    name: 'Rock',
+    image: require('assets/images/icons/rock.svg'),
+  }, {
+    name: 'Techno',
+    image: require('assets/images/icons/techno.svg'),
+  }, {
+    name: 'Classical',
+    image: require('assets/images/icons/classical.svg'),
+  ]
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 @import '~app/sass/variables';
+@import '~app/sass/fonts';
  
  .genre-card-parent{
     margin-top: 2em;
@@ -7,18 +8,41 @@
     flex-wrap: wrap;
 
     .genre-card {
+        flex: 1 0 250px;
         display: flex;
-        flex-direction: column;
-        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        justify-content: center;
         margin: 1em 0.5em;
-        background-color: white;
-        max-height: 200px;
-
-        .genre-image{
-            width: 200px;
+        .genre {
+            height: 150px;
+            width: 150px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+            background: black;
+            color: white;
+            opacity: 0.7;
+            display: flex;
+            flex-direction: column;
+            font-family: "Open Sans", sans-serif;
+            padding: 10px;
+            align-items: center;
+            transition: 0.2s ease-in;
+            box-sizing: initial;
+            .genre-image{
+                width: 100px;
+                filter: invert(100%);
+            }
+            &:hover {
+                background: white;
+                opacity: 1;
+                color: black;
+                .genre-image{
+                    filter: invert(0);
+                }
+            }
         }
+
         @media #{$normal} {
+            flex: 1 0 100px;
             max-height: 150px;
             .genre-image {
                 width: 150px;
