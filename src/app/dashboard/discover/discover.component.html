@@ -1,0 +1,8 @@
+<div class="discover-card-parent">
+  <div class="discover-card" *ngFor="let discover of discovers">
+      <div class="discover">
+        <img [src]="discover.image" class="discover-image" alt="{{discover.name}}">
+        <h3>{{discover.name}}</h3>
+      </div>
+  </div>
+</div>

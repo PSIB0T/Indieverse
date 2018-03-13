@@ -6,12 +6,13 @@ import { NavComponent } from './nav/nav.component';
 import { DashboardRootComponent } from './dashboard-root/dashboard-root.component';
 import { BrowseComponent } from './browse/browse.component';
 import { GenreComponent } from './genre/genre.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule
   ],
-  declarations: [NavComponent, DashboardRootComponent, BrowseComponent, GenreComponent]
+  declarations: [NavComponent, DashboardRootComponent, BrowseComponent, GenreComponent, DiscoverComponent]
 })
 export class DashboardModule { }
