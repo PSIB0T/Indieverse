@@ -7,12 +7,13 @@ import { DashboardRootComponent } from './dashboard-root/dashboard-root.componen
 import { BrowseComponent } from './browse/browse.component';
 import { GenreComponent } from './genre/genre.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule
   ],
-  declarations: [NavComponent, DashboardRootComponent, BrowseComponent, GenreComponent, DiscoverComponent]
+  declarations: [NavComponent, DashboardRootComponent, BrowseComponent, GenreComponent, DiscoverComponent, CardComponent]
 })
 export class DashboardModule { }

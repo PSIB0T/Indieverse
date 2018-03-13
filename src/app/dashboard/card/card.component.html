@@ -1,0 +1,8 @@
+<div class="card-parent">
+  <div class="card" *ngFor="let content of contents">
+      <div class="card-content">
+        <img [src]="content.image" class="image" alt="{{content.name}}">
+        <h3>{{content.name}}</h3>
+      </div>
+  </div>
+</div>

@@ -1,8 +1,1 @@
-<div class="genre-card-parent">
-  <div class="genre-card" *ngFor="let genre of genres">
-      <div class="genre">
-        <img [src]="genre.image" class="genre-image" alt="{{genre.name}}">
-        <h3>{{genre.name}}</h3>
-      </div>
-  </div>
-</div>
+<app-card [contents]="genres"></app-card>
