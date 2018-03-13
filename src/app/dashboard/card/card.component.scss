@@ -43,9 +43,15 @@
 
         @media #{$normal} {
             flex: 1 0 100px;
-            max-height: 150px;
-            .image {
-                width: 150px;
+            .card-content {
+                height: 100px;
+                width: 100px;
+                .image {
+                    width: 70px;    
+                }
+                h3 {
+                    font-size: 0.8em;
+                }
             }
         }
     }

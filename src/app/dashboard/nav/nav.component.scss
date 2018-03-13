@@ -50,4 +50,29 @@ a {
             width: 100px;
         }
     }
+
+    @media #{$phone} {
+        width: 100%;
+        z-index: 40;
+        .icon {
+            display: none;
+        }
+        ul {
+            text-align: center;
+            font-size: 1.5em;
+        }
+    }
+}
+
+.ham {
+    position: fixed;
+    color: white;
+    font-size: 2em;
+    z-index: 101;
+    padding: 5px;
+    display: none;
+
+    @media #{$phone} {
+        display: block;
+    }
 }
