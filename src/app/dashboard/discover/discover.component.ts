@@ -7,10 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiscoverComponent implements OnInit {
 
-  discovers = [{
-    name: 'India Top 10',
-    image: require('assets/images/icons/india.svg')
-  }]
   constructor() { }
 
   ngOnInit() {

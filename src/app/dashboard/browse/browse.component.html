@@ -13,7 +13,11 @@
                 Genres
               </a>
             </li>
-            <li>Charts</li>
+            <li>
+              <a [routerLink]="['/dashboard', {outlets: {'browse': ['charts']}}]" routerLinkActive="active">
+                Charts
+              </a>
+            </li>
             <li>
               <a [routerLink]="['/dashboard', {outlets: {'browse': ['discover']}}]" routerLinkActive="active">
                 Discover
