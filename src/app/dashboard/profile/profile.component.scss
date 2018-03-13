@@ -37,8 +37,11 @@
         align-items: center;
         justify-content: flex-end;
         z-index: 2;
+        h1, h3 {
+            margin: 0
+        }
         h1 {
-            font-size: 3em;
+            font-size: 4em;
         }
     }
     position: relative;
@@ -46,20 +49,21 @@
     background: black;
 }
 
-.button-black {
-    width: 200px;
+.button {
+    margin-top: 1em;
+    width: 150px;
     height: 60px;
-    font-size: 1.3em;
+    font-size: 1.2em;
     border-radius: 50px;
     color: white;
-    background: black;
+    background: #6f047b;
     border: none;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 300;
     transition: background, color 0.2s ease-in;
 }
 
-.button-black:hover {
+.button:hover {
     background: white;
     color: black;
     border: 0.5px solid black;
