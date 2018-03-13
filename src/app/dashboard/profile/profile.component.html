@@ -1,8 +1,12 @@
-<div class="container">
-  <div class="profile" [ngStyle]="{'background-image':'url('+ artist_img_url +')'}">
-    <h1>{{artist_name}}</h1>
-    <p>{{artist_desc}}</p>
-    <button class="button-black">follow</button>
+<app-nav></app-nav>
+<div class="profile-parent">
+  <div class="profile">
+    <div class="profile-image" [ngStyle]="{'background-image':'url('+ artist_img_url +')'}"></div>
+    <div class="title">
+      <h1>{{artist_name}}</h1>  
+      <!-- <button class="button-black">follow</button> -->
+    </div>
+
   </div>
   <div class="main">
     <div class="songs">

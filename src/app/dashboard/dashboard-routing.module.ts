@@ -4,6 +4,7 @@ import { DashboardRootComponent } from './dashboard-root/dashboard-root.componen
 import { GenreComponent } from './genre/genre.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { ChartsComponent } from './charts/charts.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardRootComponent, children: [
@@ -11,7 +12,8 @@ const routes: Routes = [
     { path: 'discover', component: DiscoverComponent, outlet: 'browse'},
     { path: 'charts', component: ChartsComponent, outlet: 'browse'},
     { path: '', redirectTo: 'genre', pathMatch: 'full'},
-  ]}
+  ]},
+  { path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

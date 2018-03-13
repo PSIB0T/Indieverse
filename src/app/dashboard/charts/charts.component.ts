@@ -9,13 +9,13 @@ export class ChartsComponent implements OnInit {
 
   charts = [{
     name: 'India Top 10',
-    image: require('assets/images/icons/india.svg')
+    image: 'assets/images/icons/india.svg'
   }, {
     name: 'USA Top 10',
-    image: require('assets/images/icons/usa.svg')
+    image: 'assets/images/icons/usa.svg'
   }, {
     name: 'World Top 10',
-    image: require('assets/images/icons/world.svg')
+    image: 'assets/images/icons/world.svg'
   }];
   constructor() { }
 

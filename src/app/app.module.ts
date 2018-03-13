@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MusicComponent } from './music/music.component';
 import {DashboardModule} from './dashboard/dashboard.module';
-import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
     PlayerComponent,
     ProgressComponent,
     HomeComponent,
-    MusicComponent,
-    ProfileComponent
+    MusicComponent
   ],
   imports: [
     BrowserModule,
