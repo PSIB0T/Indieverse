@@ -90,12 +90,16 @@
 .songs ol li {
     font-size: 1.5em;
     margin: 1.2em;
+    cursor: pointer;
 }
+
+
 
 .albums ul li{
     list-style: none;
     font-size: 0.9em;
     margin: 1.2em;
+    cursor: pointer;
 }
 
 .albums .album_item img{
@@ -112,4 +116,57 @@
 
 .album_item li{
     flex-basis: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .profile {
+        .title {
+            h1 {
+                font-size: 3.5em;
+            }
+        }
+    }
+
+    .button {
+        width: 100px;
+        height: 40px;
+        font-size: 0.8em;
+    }
+
+    .songs ol li {
+        font-size: 1.2em;
+        margin: 1em;
+    }
+    
+    .albums ul li{
+        list-style: none;
+        font-size: 0.9em;
+        margin: 1.1em;
+    }
+    
+    .albums .album_item img{
+        height: 150px;
+        width: 150px;
+    }
+    
+}
+
+@media only screen and (max-width: 568px) {
+    
+    .songs ol li {
+        font-size: 1em;
+        margin: 1em;
+    }
+    
+    .albums ul li{
+        list-style: none;
+        font-size: 0.9em;
+        margin: 1em;
+    }
+    
+    .albums .album_item img{
+        height: 150px;
+        width: 150px;
+    }
 }
