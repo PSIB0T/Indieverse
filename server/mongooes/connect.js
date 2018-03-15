@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-
 import {UserSchema} from './types';
+import config from './../../config';
 
-mongoose.connect('mongodb://localhost:27017/indieverse');
+mongoose.connect(config.mongodb);
 
 export const User = mongoose.model("User", UserSchema);
