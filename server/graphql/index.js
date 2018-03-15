@@ -1,6 +1,9 @@
 import { GraphQLObjectType,
          GraphQLString,
-         GraphQLSchema} from 'graphql';
+         GraphQLSchema,
+         GraphQLList} from 'graphql';
+import { UserType } from './types';
+import { User } from '../../server_prod/mongooes/connect';
 
 const query = new GraphQLObjectType({
     name: 'query',
@@ -10,6 +13,12 @@ const query = new GraphQLObjectType({
             args: {},
             resolve(parentVal, args) {
                 return "Hello World";
+            }
+        },
+        users: {
+            type: new GraphQLList(UserType),
+            resolve(parentVal, args) {
+                return User.find();
             }
         }
     })
