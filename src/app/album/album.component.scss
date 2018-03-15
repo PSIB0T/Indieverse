@@ -1,0 +1,65 @@
+@import '~app/sass/variables';
+.container {
+    margin: 1em;
+}
+
+
+.album_container {
+    background-color:  #6f047b;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    @media #{$phone} {
+        justify-content: center;
+    }
+}
+
+.album_container img {
+    height: 200px;
+    width: 200px;
+
+}
+
+.album_image, .album_text {
+    margin: 1em;
+}
+
+.album_image {
+    position: relative;
+}
+
+.album_image img {
+    box-shadow: 10px 10px 5px rgba(15, 15, 15, 0.411);
+}
+
+.album_image span {
+    color: rgba(95, 93, 93, 0.781);
+    font-size: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.album_image span:hover {
+    color: rgba(255, 255, 255, 0.959);
+}
+
+
+.album_songs {
+    background-color: black;
+    color: white;
+    padding: 1em;
+}
+
+.album_songs ol li {
+    font-size: 1.5em;
+    margin: 1.2em;
+    cursor: pointer;
+}
+
+.album_container p a{
+    text-decoration: none;
+    color: white;
+}
+
