@@ -9,6 +9,7 @@
     padding: 1em;
     display: flex;
     flex-wrap: wrap;
+    color:  lightgray;
     @media #{$phone} {
         justify-content: center;
     }
@@ -22,6 +23,10 @@
 
 .album_image, .album_text {
     margin: 1em;
+}
+
+.album_text h1 {
+    color: white;
 }
 
 .album_image {
@@ -63,3 +68,8 @@
     color: white;
 }
 
+@media #{$phone} {
+    li {
+        text-align: center;
+    }
+}
