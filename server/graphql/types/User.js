@@ -4,6 +4,7 @@ import {GraphQLObjectType,
     GraphQLList
 } from 'graphql';
 import { AlbumType } from '.';
+import { Album } from '../../mongooes/connect';
 
 export const UserType = new GraphQLObjectType({
     name: 'User',
@@ -15,7 +16,10 @@ export const UserType = new GraphQLObjectType({
         email: {type: GraphQLString },
         username: {type: GraphQLString },
         albums: {
-            type: new GraphQLList(AlbumType)
+            type: new GraphQLList(AlbumType),
+            resolve(parentVal) {
+                return Album.findAlbums(parentVal.albums);
+            }
         }
     })
 })
