@@ -6,7 +6,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  isHam = true;
+  isHam;
   isPhone;
   class_name;
   constructor() { }
@@ -17,7 +17,8 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isHam = window.screen.width > 530 || !this.isPhone ? false : true;
+    this.isPhone = window.screen.width > 530 ? false : true;
+    this.isHam = true;
     this.class_name = this.isHam ? 'fa fa-bars ham' : 'fa fa-times ham';
   }
   toggleHam() {

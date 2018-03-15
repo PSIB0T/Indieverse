@@ -24,6 +24,9 @@
     @media #{$normal} {
         padding-left: #{$navWidth-small};
     }
+    @media #{$phone} {
+        padding-left: 0;
+    }
 }
 
 .profile {
