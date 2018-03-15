@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   isHam = true;
-  class_name = 'fa fa-bars ham'
+  isPhone;
+  class_name;
   constructor() { }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.isPhone = window.screen.width > 530 ? false : true;
+  }
+
   ngOnInit() {
+    this.isHam = window.screen.width > 530 || !this.isPhone ? false : true;
+    this.class_name = this.isHam ? 'fa fa-bars ham' : 'fa fa-times ham';
   }
   toggleHam() {
     if (this.isHam) {

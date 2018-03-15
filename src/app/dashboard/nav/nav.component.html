@@ -1,5 +1,5 @@
 <span [className]="class_name" (click)="toggleHam()"></span>
-<nav class="side-nav" [style.display]="isHam?'none':'flex'">
+<nav class="side-nav" [style.display]="isHam && isPhone?'none':'flex'">
   <img src="/assets/images/starbucks.png" alt="logo" class="logo">
   <ul>
     <li><a routerLink="/dashboard"><span class="fa fa-headphones icon"></span>Browse</a></li>
