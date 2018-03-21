@@ -1,0 +1,29 @@
+@import '~app/sass/variables';
+.text {
+    margin: 1em;
+    text-align: center;
+}
+
+h1,h2,h3 {
+    margin:0;
+}
+
+h3 {
+    font-weight: normal;
+}
+
+.artwork {
+    display: flex;
+    justify-content: center;
+}
+
+.artwork img {
+    height: 400px;
+    width: 400px;
+    box-shadow: 10px 10px 5px rgba(15, 15, 15, 0.411);
+    border-radius: 10%;
+    @media #{$phone} {
+        height: 200px;
+        width: 200px;
+    }  
+}

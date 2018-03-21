@@ -1,0 +1,15 @@
+@import '~app/sass/variables';
+
+.controls {
+    margin-top: 1em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.controls span {
+    text-align: center;
+    margin:0 2em;
+    @media #{$phone} {
+        margin: 0 0.7em;
+    }
+}

@@ -16,6 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MusicComponent } from './music/music.component';
 import {DashboardModule} from './dashboard/dashboard.module';
 import { AlbumComponent } from './album/album.component';
+import { MusicPlayerModule } from './music-player/music-player.module'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AlbumComponent } from './album/album.component';
     ReactiveFormsModule,
     MatInputModule,
     AppRoutingModule,
-    DashboardModule
+    DashboardModule,
+    MusicPlayerModule
   ],
   providers: [
     ApiService,
