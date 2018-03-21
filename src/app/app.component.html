@@ -1,23 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div [ngStyle]="backgroundStyle">
-    <app-music-search-component [tracks]="tracks"
-        (update)="playMusic($event)"
-    >
+<router-outlet></router-outlet>
 
-    </app-music-search-component>
-    <app-music-details [title]="title"></app-music-details>
-    <app-player [paused]="paused"
-    (pauseplay)="handlePausePlay()"
-    (stop)="handleStop()"
-    (random)="handleRandom()"
-    ></app-player>
-    <app-progress 
-        [elapsed]="elapsed" 
-        [total]="duration" 
-        [current]="position"
-        (updatePosition)="handleUpdatePosition($event)">
-
-    </app-progress>
-</div>
 
 

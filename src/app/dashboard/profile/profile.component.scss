@@ -1,0 +1,112 @@
+@import '~app/sass/variables';
+@import '~app/sass/fonts';
+
+.container {
+    margin: 1em;
+}
+
+.profile-parent {
+    font-family: "Open Sans", sans-serif;
+    .profile-image {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        top: 0;
+        left: 0;
+        filter: blur(1.5px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+    }
+    padding-left: #{$navWidth};
+    @media #{$normal} {
+        padding-left: #{$navWidth-small};
+    }
+}
+
+.profile {
+    color: white;
+    height: 35vh;
+    .title {
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 2;
+        h1, h3 {
+            margin: 0
+        }
+        h1 {
+            font-size: 4em;
+        }
+    }
+    position: relative;
+    padding: 1.2em;
+    background: black;
+}
+
+.button {
+    margin-top: 1em;
+    width: 150px;
+    height: 60px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    color: white;
+    background: #6f047b;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: background, color 0.2s ease-in;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+}
+
+.main{
+    background-color: rgb(0, 0, 0);
+    padding: 1em;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.albums,.songs {
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+
+
+.songs ol li {
+    font-size: 1.5em;
+    margin: 1.2em;
+}
+
+.albums ul li{
+    list-style: none;
+    font-size: 0.9em;
+    margin: 1.2em;
+}
+
+.albums .album_item img{
+    height: 150px;
+    width: 150px;
+}
+
+.albums ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.album_item li{
+    flex-basis: 50%;
+}

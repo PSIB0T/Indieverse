@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Ubuntu:700');
+
+
+.hero {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image {
+    background-image: url('https://cdn2.img.sputniknews.com/images/105228/69/1052286938.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.hero-text {
+    text-align: center;
+    color: white;
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:  10%;
+    width: 100%;
+    font-family: "Ubuntu";
+    /* background: radial-gradient(circle, rgba(68, 0, 255, 0.068), rgba(255, 0, 76, 0.151), rgba(102, 0, 128, 0)); */
+}
+
+.hero-text h1 {
+    font-size: 6em;
+}
+
+.hero-text p {
+    font-size: 2em;
+}
+
+.hero-text h1,p {
+    margin: 0;
+}
+
+.hero-link a {
+    text-decoration: none;
+    color: white;
+    font-size: 5em;
+}
+
+.hero-link {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-text button:hover {
+    background-color: #555;
+}
+
+.hero-text h1 {
+    color: white;
+}
+
+.blur-effect {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    color: rgba(130, 130, 130, 0.5);
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    padding: 4em;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 20%;
+}
+
+.secondary {
+    position: absolute;
+    top: 0;
+    left: 60%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 2em;
+}
+
+.secondary a {
+    background-color: rgba(215, 15, 233, 0.842);
+    padding: 0.5em 1.2em;
+    font-weight: bolder;
+}
+
+
+
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: right;
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+    font-family: "Raleway";
+}
+.menu {
+    margin: 0 30px 0 0;
+}
+.menu a {
+    clear: right;
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    line-height: 70px;
+    text-transform: uppercase;
+}
+
+label {
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+    width: 26px;
+    float: right;
+    color: white;
+}
+#toggle {
+    display: none;
+}
+
+
+
+section {
+    padding: 2em;
+    font-family: "Raleway";
+    color: white;
+    text-align: center;
+}
+
+.icon {
+    height: 80px;
+}
+
+.icon .icon-content {
+    font-size: 4em;
+}
+
+#section1 {
+    background: white;
+    color: black;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#section1 .section-child-1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.button-black {
+    width: 200px;
+    height: 60px;
+    font-size: 1.3em;
+    border-radius: 50px;
+    color: white;
+    background: black;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background, color 0.2s ease-in;
+}
+
+.button-black:hover {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+}
+
+#section1 .section-content {
+    margin: 1em;
+    width: 250px;
+}
+
+#section1 .section-child-2 {
+    margin-top: 3em;
+}
+
+#section2 .background-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(/assets/images/edm.jpg);
+    background-size: cover;
+    z-index: -1;
+    filter: blur(2.3px);
+}
+
+#section2 {
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#section2 .section-text {
+    padding: 0 3.5em;
+    background: radial-gradient(circle, rgba(68, 0, 255, 0.068), rgba(255, 0, 76, 0.151), rgba(102, 0, 128, 0.2));
+    text-align: left;
+}
+
+#section2 .section-text h1{
+    font-size: 6em;
+}
+
+#section2 .section-text p {
+    font-size: 1.5em;
+}
+
+#section3 {
+    background: white;
+    color: black;
+}
+
+#section3{
+    background: white;
+    color: black;
+}
+#section3 h1 {
+    font-size: 3em;
+}
+
+#section3 .profile-card-parent{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#section3 .profile-card-parent .profile-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    margin: 1em 0;
+}
+
+#section3 .profile-card-parent .profile-card .artist{
+    padding: 20px;
+}
+
+#section3 .profile-card-parent .profile-card .artist-image{
+    width: 200px;
+    border-radius: 100px;
+    border: 1px solid #cacaca;
+
+}
+
+#section3 .profile-card-parent .profile-card .sub-count{
+    text-align: left;
+    border-top: 1px solid #cacaca;
+}
+#section3 .profile-card-parent .profile-card .sub-count h4{
+    margin: 10px;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 4em;
+    }
+    
+    .hero-text p {
+        font-size: 1.2em;
+    }
+
+    .hero-link a {
+        font-size: 4em;
+    }
+
+    #section2 .section-text h1{
+        font-size: 4em;
+    }
+
+
+    label {
+        display: block;
+        cursor: pointer;
+        font-size: 2.5em;
+    }
+    .menu {
+        text-align: center;
+        width: 100%;
+        display: none;
+        background-color: black;
+    }
+    .menu a {
+        display: block;
+        margin: 0;
+    }
+    #toggle:checked + .menu {
+        display: block;
+    }
+
+    
+}
+
+@media only screen and (max-width: 568px) {
+    .hero-text h1 {
+        font-size: 3.2em;
+    }
+    
+    .hero-text p {
+        font-size: 1.1em;
+    }
+    .hero-link a {
+        font-size: 3em;
+    }
+
+    #section2 .section-text h1{
+        font-size: 2.5em;
+    }
+}
+

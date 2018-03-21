@@ -1,0 +1,38 @@
+<div class="main">
+  <header>
+    <div class="search-container">
+      <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+      <input type="text" list="songs" class="search-box" name="search" placeholder="search">
+      <datalist id="songs">
+          <option *ngFor="let song of songs" value="{{song}}">
+      </datalist>
+    </div>
+    <div class="browse-content">
+      <h1 class="cat-title">Browse</h1>
+        <nav class="browse-nav">
+          <ul>
+            <li>
+              <a [routerLink]="['/dashboard', {outlets: {'browse': ['genre']}}]" routerLinkActive="active">
+                Genres
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/dashboard', {outlets: {'browse': ['charts']}}]" routerLinkActive="active">
+                Charts
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/dashboard', {outlets: {'browse': ['discover']}}]" routerLinkActive="active">
+                Discover
+              </a>
+            </li>
+            <li>New Releases</li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+
+  <div class="content">
+    <router-outlet name="browse"></router-outlet>
+  </div>
+</div>

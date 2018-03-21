@@ -1,0 +1,11 @@
+<span [className]="class_name" (click)="toggleHam()"></span>
+<nav class="side-nav" [style.display]="isHam && isPhone?'none':'flex'">
+  <img src="/assets/images/starbucks.png" alt="logo" class="logo">
+  <ul>
+    <li><a routerLink="/dashboard"><span class="fa fa-headphones icon"></span>Browse</a></li>
+    <li><a routerLink="/profile"><span class="fa fa-user icon"></span>Profile</a></li>
+    <li><span class="fa fa-history icon"></span>Recently Played</li>
+    <li><span class="fa fa-heart icon"></span>Followed Artists</li>
+    <li><span class="fa fa-sign-out icon"></span> Logout</li>
+  </ul>
+</nav>
