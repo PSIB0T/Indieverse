@@ -1,5 +1,6 @@
 const express = require('express');
 const expressGraphQL = require('express-graphql');
+const cors = require('cors');
 
 const {schema} = require('./server_prod/graphql/index');
 
@@ -13,6 +14,7 @@ const app = express();
 // Run the app by serving the static files
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
+app.use(cors());
 
 app.use('/graphql', expressGraphQL({
   schema,

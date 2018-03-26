@@ -1,6 +1,13 @@
 <div class="container">
-  <app-music-details></app-music-details>
+  <app-music-details [title]="isLoading?currentMusic.title:''" 
+                      [albumTitle]="!isLoading?currentMusic.album.title:''"
+                      [artistName]="!isLoading?currentMusic.album.artist.username:''"
+                      [coverArt]="!isLoading?currentMusic.coverArt:''">
+
+  </app-music-details>
   <app-music-progress></app-music-progress>
-  <app-music-control></app-music-control>
+  <app-music-control [paused]="isPaused" (pause)="pause()">
+
+  </app-music-control>
   
 </div>

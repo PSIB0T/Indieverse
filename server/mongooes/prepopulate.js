@@ -44,6 +44,8 @@ function prepopulate() {
             let music = new Music({
                 title: faker.hacker.abbreviation(),
                 genre: faker.commerce.productName(),
+                streamUrl: 'https://api.soundcloud.com/tracks/168227883/stream',
+                coverArt: 'https://i1.sndcdn.com/artworks-000091355749-pz52yp-large.jpg'
             })
             return album.addMusic(music);
         })

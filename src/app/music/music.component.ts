@@ -20,6 +20,7 @@ export class MusicComponent implements OnInit {
     }
     ngOnInit() {
       this.musicService.getPlaylistTracks().subscribe(tracks => {
+        console.log(tracks);
         this.tracks = tracks;
         this.handleRandom();
       });

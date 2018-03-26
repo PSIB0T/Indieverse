@@ -21,6 +21,13 @@ export const MusicSchema = new Schema({
     albumId: {
         type: Schema.Types.ObjectId
     },
+    streamUrl: {
+        type: String,
+        required: true
+    },
+    coverArt: {
+        type: String,
+    },
     featuring: [{
         artistId: Schema.Types.ObjectId
     }]

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MusicFetchService } from './music-fetch.service';
 
 import { MusicPlayerRoutingModule } from './music-player-routing.module';
 import { MusicRootComponent } from './music-root/music-root.component';
@@ -12,6 +13,9 @@ import { MusicProgressComponent } from './music-progress/music-progress.componen
     CommonModule,
     MusicPlayerRoutingModule
   ],
-  declarations: [MusicRootComponent, MusicDetailsComponent, MusicControlComponent, MusicProgressComponent]
+  declarations: [MusicRootComponent, MusicDetailsComponent, MusicControlComponent, MusicProgressComponent],
+  providers: [
+    MusicFetchService
+  ]
 })
 export class MusicPlayerModule { }

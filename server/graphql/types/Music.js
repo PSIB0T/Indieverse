@@ -15,6 +15,8 @@ export const MusicType = new GraphQLObjectType({
         title: {type: GraphQLString },
         genre: {type: GraphQLString },
         date: {type: GraphQLDate},
+        streamUrl: {type: GraphQLString },
+        coverArt: {type: GraphQLString },
         album: {
             type: AlbumType,
             resolve(parentVal) {

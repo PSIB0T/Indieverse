@@ -16,7 +16,12 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MusicComponent } from './music/music.component';
 import {DashboardModule} from './dashboard/dashboard.module';
 import { AlbumComponent } from './album/album.component';
+import { ApolloModule, Apollo } from 'apollo-angular';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 import { MusicPlayerModule } from './music-player/music-player.module'
+import * as config from './../../config.js';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,10 @@ import { MusicPlayerModule } from './music-player/music-player.module'
     MatInputModule,
     AppRoutingModule,
     DashboardModule,
-    MusicPlayerModule
+    MusicPlayerModule,
+    HttpLinkModule,
+    ApolloModule,
+    HttpClientModule
   ],
   providers: [
     ApiService,
@@ -47,4 +55,11 @@ import { MusicPlayerModule } from './music-player/music-player.module'
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(_appolo: Apollo, httpLink: HttpLink) {
+    _appolo.create({
+      link: httpLink.create({ uri: config.server + '/graphql' }),
+      cache: new InMemoryCache()
+    })
+  }
+}
