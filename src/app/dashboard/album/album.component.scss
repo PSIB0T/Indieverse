@@ -1,8 +1,18 @@
 @import '~app/sass/variables';
+@import '~app/sass/fonts';
 .container {
     margin: 1em;
 }
 
+.album_container_parent {
+    padding-left: #{$navWidth};
+    @media #{$normal} {
+        padding-left: #{$navWidth-small};
+    }
+    @media #{$phone} {
+        padding-left: 0;
+    }  
+}
 
 .album_container {
     background-color:  #6f047b;
