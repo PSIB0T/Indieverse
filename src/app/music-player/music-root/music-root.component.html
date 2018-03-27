@@ -5,7 +5,8 @@
                       [coverArt]="!isLoading?currentMusic.coverArt:''">
 
   </app-music-details>
-  <app-music-progress [position]="position" 
+  <div class="bottom-fixed">
+    <app-music-progress [position]="position" 
                       [elapsed]="elapsed"
                       [duration]="duration"
                       (updatePosition)="handleUpdatePosition($event)">
@@ -14,5 +15,6 @@
   <app-music-control [paused]="isPaused" (pause)="pause()">
 
   </app-music-control>
+  </div>
   
 </div>

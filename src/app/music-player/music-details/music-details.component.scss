@@ -1,7 +1,10 @@
 @import '~app/sass/variables';
+
 .text {
+    flex: 2;
     margin: 1em;
     text-align: center;
+    color: white;
 }
 
 h1,h2,h3 {
@@ -18,12 +21,9 @@ h3 {
 }
 
 .artwork img {
-    height: 400px;
-    width: 400px;
+    height: 200px;
+    width: 200px;
     box-shadow: 10px 10px 5px rgba(15, 15, 15, 0.411);
     border-radius: 10%;
-    @media #{$phone} {
-        height: 200px;
-        width: 200px;
-    }  
+     
 }

@@ -1,3 +1,13 @@
 .container {
     padding: 1em;
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+    position: relative;
+}
+
+.bottom-fixed {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%)
 }
