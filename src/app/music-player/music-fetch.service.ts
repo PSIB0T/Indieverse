@@ -14,9 +14,9 @@ export class MusicFetchService {
     this.audio = new Audio();
   }
 
-  fetchSong(): Observable<IMusic> {
+  fetchSong(musicId): Observable<IMusic> {
     return this.apollo.query({query: gql`{
-                            musics {
+                            music(musicId: "${musicId}"){
                                 title
                                 streamUrl
                                 coverArt
@@ -27,7 +27,7 @@ export class MusicFetchService {
                                     }
                                 }
                             }
-                        }`}).map((res: any) => res.data.musics[0]);
+                        }`}).map((res: any) => res.data.music);
   }
 
   prepareUrl(url) {
@@ -42,5 +42,13 @@ export class MusicFetchService {
   play(url) {
     this.load(url);
     this.audio.play()
+  }
+
+  formatTime(seconds) {
+    let minutes: any = Math.floor(seconds / 60);
+    minutes = (minutes >= 10) ? minutes : '0' + minutes;
+    seconds = Math.floor(seconds % 60);
+    seconds = (seconds >= 10) ? seconds : '0' + seconds;
+    return minutes + ':' + seconds;
   }
 }

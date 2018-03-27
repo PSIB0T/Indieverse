@@ -10,6 +10,7 @@ import { DiscoverComponent } from './discover/discover.component';
 import { CardComponent } from './card/card.component';
 import { ChartsComponent } from './charts/charts.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ArtistService } from './artist.service';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [NavComponent,
                  DashboardRootComponent,
                  BrowseComponent,
-                 GenreComponent, 
-                 DiscoverComponent, CardComponent, ChartsComponent, ProfileComponent]
+                 GenreComponent,
+                 DiscoverComponent, CardComponent, ChartsComponent, ProfileComponent],
+  providers: [ArtistService]
 })
 export class DashboardModule { }

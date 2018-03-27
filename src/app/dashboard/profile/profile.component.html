@@ -14,37 +14,17 @@
       <h2>Top Songs</h2>
       <ol>
         <li *ngFor="let song of top_songs">
-          {{ song }}
+          <a [routerLink]="['/player', song.id]">{{ song.title }}</a>
         </li>
       </ol>
     </div>
     <div class="albums">
       <h2>Albums</h2>
       <ul>
-        <li>
+        <li *ngFor="let album of albums"> 
           <div class="album_item">
-            <img src="https://goo.gl/e7kCjZ" alt="">
-            <p>Grateful</p>
-          </div>
-        </li>
-        <li>
-          <div class="album_item">
-            <img src="https://goo.gl/e7kCjZ" alt="">
-            <p>Major Key</p>
-          </div>
-
-        </li>
-        <li>
-          <div class="album_item">
-            <img src="https://goo.gl/e7kCjZ" alt="">
-            <p>I Changed a Lot</p>
-          </div>
-
-        </li>
-        <li>
-          <div class="album_item">
-            <img src="https://goo.gl/e7kCjZ" alt="">
-            <p>Suffering from Success</p>
+            <img src="https://goo.gl/e7kCjZ" alt="{{album.title}}">
+            <p>{{album.title}}</p>
           </div>
         </li>
       </ul>

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MusicRootComponent } from './music-root/music-root.component';
 
 const routes: Routes = [
-  { path: 'player', component: MusicRootComponent }
+  { path: 'player/:id', component: MusicRootComponent }
 ];
 
 @NgModule({

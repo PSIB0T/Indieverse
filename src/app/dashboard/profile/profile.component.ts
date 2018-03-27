@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtistService } from './../artist.service';
+import { IArtist } from '../../music-player/classes/iArtist';
+import { IAlbum } from '../../music-player/classes/iAlbum';
+import { IMusic } from '../../music-player/classes/iMusic';
 
 @Component({
   selector: 'app-profile',
@@ -7,19 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  artist_name = 'DJ Khaled';
-  artist_desc = `Khaled Mohamed Khaled (born November 26, 1975) is an American record producer,
-                        radio personality, DJ, record label executive and author. He was a radio host for the Miami-based urban music 
-                        radio station WEDR 99 Jamz and the DJ for the hip hop group Terror Squad. From 2004 to 2006, 
-                        Khaled assisted in the production of the hip-hop albums Real Talk by Fabolous,
-                        True Story by Terror Squad, All or Nothing and Me, Myself, & I by Fat Joe.`
+  artistId: string;
+  artist_name: string;
+  artist_desc: string;
   artist_img_url = 'http://compoundent.com/content/uploads/2016/08/DJ-Khaled-press-photo-head-shot-2016-billboard-650.jpg';
-  top_songs = ['I am the one', 'Wild Thoughts', 'Do You Mind', 'All I Do Is Win', 'Hold You Down'];
-  // top_albums = [{title:'Grateful',img_url:''},{title:'',img_url:''},{title:'',img_url:''},{title:'',img_url:''}];
+  top_songs: IMusic[];
+  albums: IAlbum[]
 
-  constructor() { }
+  constructor(private _artistService: ArtistService) {
+    this.top_songs = [];
+    this.artistId = '5ab99cc3c7c9231670abd672';
+  }
 
   ngOnInit() {
+    this._artistService.fetchArtist(this.artistId)
+                       .subscribe((artist: IArtist) => {
+                         this.artist_name = artist.username;
+                         this.albums = artist.albums.map((album) => {
+                           return {
+                             title: album.title
+                           }
+                         })
+                         artist.albums.forEach((album) => {
+                          album.musics.forEach((music) => {
+                            this.top_songs.push(music);
+                          })
+                         })
+                         console.log(this.top_songs);
+                       })
   }
 
 

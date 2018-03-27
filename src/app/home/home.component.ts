@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  musicId = '5ab99cc3c7c9231670abd679';
   artists = [{
     name: 'DJ Khaled',
     image: 'https://images.complex.com/complex/image/upload/c_fill,f_auto,g_faces:auto,h_900,q_auto,w_900/m6mjx9nhyk72xtqj3e2p.jpg',

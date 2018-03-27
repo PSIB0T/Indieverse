@@ -6,8 +6,6 @@ const {schema} = require('./server_prod/graphql/index');
 
 const {prepopulate} = require('./server_prod/mongooes/prepopulate')
 
-prepopulate();
-
 const config = require('./config');
 
 const app = express();
