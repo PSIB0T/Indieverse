@@ -26,6 +26,12 @@ export const UserSchema = new Schema({
         type: String,
         required: true        
     },
+    profileImage: {
+        type: String
+    },
+    coverImage: {
+        type: String
+    },
     albums: [{
         albumId: Schema.Types.ObjectId
     }]

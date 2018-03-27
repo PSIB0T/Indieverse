@@ -14,22 +14,25 @@ export class ProfileComponent implements OnInit {
   artistId: string;
   artist_name: string;
   artist_desc: string;
-  artist_img_url = 'http://compoundent.com/content/uploads/2016/08/DJ-Khaled-press-photo-head-shot-2016-billboard-650.jpg';
+  cover_image: string;
   top_songs: IMusic[];
   albums: IAlbum[]
 
   constructor(private _artistService: ArtistService) {
     this.top_songs = [];
-    this.artistId = '5ab99cc3c7c9231670abd672';
+    this.artistId = '5ab9e960de66771fdbe92417';
   }
 
   ngOnInit() {
     this._artistService.fetchArtist(this.artistId)
                        .subscribe((artist: IArtist) => {
                          this.artist_name = artist.username;
+                         this.cover_image = artist.coverImage;
                          this.albums = artist.albums.map((album) => {
                            return {
-                             title: album.title
+                             id: album.id,
+                             title: album.title,
+                             albumArt: album.albumArt
                            }
                          })
                          artist.albums.forEach((album) => {
@@ -37,10 +40,7 @@ export class ProfileComponent implements OnInit {
                             this.top_songs.push(music);
                           })
                          })
-                         console.log(this.top_songs);
+                         this.top_songs = this.top_songs.slice(0, 10)
                        })
   }
-
-
-
 }

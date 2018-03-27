@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { IMusic } from './../classes/iMusic';
   templateUrl: './music-root.component.html',
   styleUrls: ['./music-root.component.scss']
 })
-export class MusicRootComponent implements OnInit {
+export class MusicRootComponent implements OnInit, OnDestroy {
   currentMusic: IMusic = {};
   isLoading: boolean;
   isPaused: boolean;
@@ -40,6 +40,10 @@ export class MusicRootComponent implements OnInit {
                              this._musicFetchService.play(this.currentMusic.streamUrl)
                              this._musicFetchService.audio.ontimeupdate = this.handleTimeUpdate.bind(this);
                            })
+  }
+
+  ngOnDestroy() {
+    this._musicFetchService.stop();
   }
 
   pause() {

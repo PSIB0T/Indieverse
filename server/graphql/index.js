@@ -49,7 +49,7 @@ const query = new GraphQLObjectType({
                 }
             },
             resolve(parentVal, args) {
-                return ALbum.findById(args.albumId)
+                return Album.findById(args.albumId)
             }
         },
         musics: {

@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MusicComponent } from './music/music.component';
 import {DashboardModule} from './dashboard/dashboard.module';
-import { AlbumComponent } from './album/album.component';
 import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,8 +30,7 @@ import * as config from './../../config.js';
     PlayerComponent,
     ProgressComponent,
     HomeComponent,
-    MusicComponent,
-    AlbumComponent
+    MusicComponent
   ],
   imports: [
     BrowserModule,

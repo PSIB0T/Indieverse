@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { IArtist } from './../music-player/classes/iArtist';
+import { IAlbum } from '../music-player/classes/iAlbum';
 
 @Injectable()
 export class ArtistService {
@@ -16,9 +17,11 @@ export class ArtistService {
                                 id
                                 username
                                 descripion
+                                coverImage
                                 albums{
                                 id
                                 title
+                                albumArt
                                 musics{
                                     id
                                     title
@@ -26,5 +29,23 @@ export class ArtistService {
                                 }
                             }
                         }`}).map((res: any) => res.data.user);
+  }
+
+  fetchAlbum(albumId): Observable<IAlbum> {
+    return this.apollo.query({query: gql`{
+                            album(albumId:"${albumId}"){
+                                title
+                                descripion
+                                albumArt
+                                date
+                                artist{
+                                    username
+                                }
+                                musics{
+                                    id
+                                    title
+                                }
+                            }
+                        }`}).map((res: any) => res.data.album);
   }
 }

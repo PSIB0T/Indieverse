@@ -34,6 +34,11 @@ export class MusicFetchService {
     return `${url}?client_id=${this.clientId}`
   }
 
+  stop() {
+    this.audio.pause();
+    this.audio.currentTime = 0.0;
+  }
+
   load(url) {
     this.audio.src = this.prepareUrl(url);
     this.audio.load();

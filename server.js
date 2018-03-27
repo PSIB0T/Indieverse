@@ -9,6 +9,8 @@ const {prepopulate} = require('./server_prod/mongooes/prepopulate')
 const config = require('./config');
 
 const app = express();
+
+// prepopulate();
 // Run the app by serving the static files
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));

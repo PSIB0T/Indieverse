@@ -5,6 +5,7 @@ import { GenreComponent } from './genre/genre.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { ChartsComponent } from './charts/charts.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AlbumComponent } from './album/album.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardRootComponent, children: [
@@ -13,7 +14,8 @@ const routes: Routes = [
     { path: 'charts', component: ChartsComponent, outlet: 'browse'},
     { path: '', redirectTo: 'genre', pathMatch: 'full'},
   ]},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  {path: 'album/:id', component: AlbumComponent}
 ];
 
 @NgModule({

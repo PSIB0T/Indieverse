@@ -2,9 +2,10 @@ import { IAlbum } from './iAlbum';
 import { IArtist } from './iArtist';
 
 export interface IMusic {
-    title?: String;
-    streamUrl?: String;
-    coverArt?: String;
+    id?: string
+    title?: string;
+    streamUrl?: string;
+    coverArt?: string;
     album?: IAlbum;
     featuring?: IArtist[];
 };

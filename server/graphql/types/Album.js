@@ -14,6 +14,7 @@ export const AlbumType = new GraphQLObjectType({
         title: {type: GraphQLString },
         descripion: {type: GraphQLString },
         date: {type: GraphQLDate},
+        albumArt: {type: GraphQLString },
         artist: {
             type: UserType,
             resolve(parentVal) {

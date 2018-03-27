@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="album_container">
+    <div class="album_image">
+      <span class="far fa-play-circle"></span>
+      <img class="album_art" [src]="albumCoverArt" alt={{albumName}}>
+    </div>
+    <div class="album_text">
+      <h1>{{albumName}}</h1>
+      <p>by
+        <a href="/profile">{{albumArtist}}</a>
+      </p>
+      <p>{{albumDate | date}}</p>
+    </div>
+  </div>
+  <div class="album_songs">
+    <ol>
+      <li *ngFor="let song of albumSongs">
+        <a [routerLink]="['/player', song.id]">{{song.title}}</a>
+      </li>
+    </ol>
+  </div>
+</div>

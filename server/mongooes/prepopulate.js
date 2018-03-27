@@ -23,7 +23,9 @@ function prepopulate() {
                     username: faker.internet.userName(),
                     firstname: faker.lorem.word(),
                     lastname: faker.lorem.word(),
-                    password: faker.internet.password()
+                    password: faker.internet.password(),
+                    profileImage: 'https://marriedbiography.com/wp-content/uploads/2018/01/DJ-Khaled.jpg',
+                    coverImage: 'https://i2.wp.com/www.capitalfm.co.ke/campus/files/2017/12/djkhaled.jpg?resize=870%2C490&ssl=1'
                 });
                 users.push(user);
             }
@@ -36,6 +38,7 @@ function prepopulate() {
             let album = new Album({
                 title: faker.hacker.abbreviation(),
                 description: faker.lorem.lines(2),
+                albumArt: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/DJ_Khaled_Suffering_from_Success.jpg/220px-DJ_Khaled_Suffering_from_Success.jpg'
             });
             return users[0].addAlbum(album);
         })

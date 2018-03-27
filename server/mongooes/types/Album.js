@@ -13,6 +13,9 @@ export const AlbumSchema = new Schema({
     description: {
         type: String
     },
+    albumArt: {
+        type: String
+    },
     artistId: {
         type: Schema.Types.ObjectId
     },

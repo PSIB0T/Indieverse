@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div class="profile-parent">
   <div class="profile">
-    <div class="profile-image" [ngStyle]="{'background-image':'url('+ artist_img_url +')'}"></div>
+    <div class="profile-image" [ngStyle]="{'background-image':'url('+ cover_image +')'}"></div>
     <div class="title">
       <h1>{{artist_name}}</h1>
       <h3>Followers: 69</h3>
@@ -23,8 +23,9 @@
       <ul>
         <li *ngFor="let album of albums"> 
           <div class="album_item">
-            <img src="https://goo.gl/e7kCjZ" alt="{{album.title}}">
-            <p>{{album.title}}</p>
+            <img src="{{album.albumArt}}" alt="{{album.title}}">
+            <br>
+            <a [routerLink]="['/album', album.id]">{{album.title}}</a>
           </div>
         </li>
       </ul>

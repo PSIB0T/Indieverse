@@ -11,6 +11,7 @@ import { CardComponent } from './card/card.component';
 import { ChartsComponent } from './charts/charts.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ArtistService } from './artist.service';
+import { AlbumComponent } from './album/album.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,11 @@ import { ArtistService } from './artist.service';
                  DashboardRootComponent,
                  BrowseComponent,
                  GenreComponent,
-                 DiscoverComponent, CardComponent, ChartsComponent, ProfileComponent],
+                 DiscoverComponent,
+                 CardComponent,
+                 ChartsComponent,
+                 ProfileComponent,
+                 AlbumComponent],
   providers: [ArtistService]
 })
 export class DashboardModule { }

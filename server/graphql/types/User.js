@@ -15,6 +15,8 @@ export const UserType = new GraphQLObjectType({
         descripion: {type: GraphQLString },
         email: {type: GraphQLString },
         username: {type: GraphQLString },
+        profileImage: {type: GraphQLString },
+        coverImage: {type: GraphQLString },
         albums: {
             type: new GraphQLList(AlbumType),
             resolve(parentVal) {

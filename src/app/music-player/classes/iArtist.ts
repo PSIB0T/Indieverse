@@ -7,5 +7,7 @@ export interface IArtist {
     descripion?: string;
     email?: string;
     username?: string;
+    coverImage?: string;
+    profileImage?: string;
     albums?: IAlbum[]
 };
