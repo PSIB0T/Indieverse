@@ -1,0 +1,63 @@
+<div class="container">
+  <h2>Signup</h2>
+  <form [formGroup]="form" (ngSubmit)="signup()">
+    <small *ngIf="error">
+      Username or password is incorrect
+    </small>
+    <div class="input-group">
+      <label for="username">Firstname</label>
+      <input type="text" name="username"
+      [formControl]="formControl.firstname">
+      <small *ngIf="formControl.lastname.touched && (!formControl.lastname.valid)">
+        FirstName is required
+      </small>
+    </div>
+    <div class="input-group">
+      <label for="password">Lastname</label>
+      <input type="password" name="password"
+      [formControl]="formControl.lastname">
+      <small *ngIf="formControl.firstname.touched && (!formControl.firstname.valid)">
+        LastName is required
+      </small>
+    </div>
+  
+    <div class="input-group">
+      <label for="description">Description</label>
+      <input type="text" name="description"
+      [formControl]="formControl.description">
+    </div>
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" name="username"
+      [formControl]="formControl.username">
+      <small *ngIf="formControl.username.touched && (!formControl.username.valid)">
+        Username is required
+      </small>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" name="password"
+      [formControl]="formControl.password">
+      <small *ngIf="formControl.password.touched && (!formControl.password.valid)">
+        Password is required
+      </small>
+    </div>
+    <div class="input-group">
+      <label for="password">Confirm password</label>
+      <input type="password" name="confirmPassword"
+      [formControl]="formControl.confirmPassword">
+      <small *ngIf="formControl.confirmPassword.touched && (form.errors) && (form.errors.mismatchedPasswords)">
+        Passwords do not match
+      </small>
+    </div>
+    <div class="input-group">
+      <label for="password">Email</label>
+      <input type="text" name="email"
+      [formControl]="formControl.email">
+      <small *ngIf="formControl.email.touched && (!formControl.email.valid)">
+        Invalid email
+      </small>
+    </div>
+	<button type="submit" name="button">Submit</button>
+  </form>
+</div>

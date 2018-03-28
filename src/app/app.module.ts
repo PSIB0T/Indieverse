@@ -23,6 +23,7 @@ import { MusicPlayerModule } from './music-player/music-player.module'
 import * as config from './../../config.js';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginService } from './login.service';
     ProgressComponent,
     HomeComponent,
     MusicComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
