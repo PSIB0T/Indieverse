@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { matchingPasswords } from './../validators/matchPassword';
 import { emailValidator } from '../validators/emailVaildator';
+import {Observable} from 'rxjs/Observable';
+import { IArtist } from '../music-player/classes/iArtist';
 
 @Component({
   selector: 'app-signup',
@@ -10,6 +12,8 @@ import { emailValidator } from '../validators/emailVaildator';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  @ViewChild('profileImage') profileImage;
+  @ViewChild('coverImage') coverImage;
 
   private form: FormGroup;
   private formControl: any;
@@ -32,7 +36,24 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    console.log(this.form)
+    const pi = this.profileImage.nativeElement;
+    const ci = this.coverImage.nativeElement;
+    const userInfo: IArtist = this.form.value;
+    if (pi.files && pi.files[0] && ci.files && ci.files[0]) {
+      this._loginService.uploadFile(pi.files[0])
+          .mergeMap((profileImage) => {
+            userInfo.profileImage = profileImage;
+            return this._loginService.uploadFile(ci.files[0])
+          }).mergeMap((res) => {
+            userInfo.coverImage = res;
+            return this._loginService.signUp(userInfo)
+          }).subscribe((res) => {
+            console.log(res);
+          }, (err) => {
+            console.log(err)
+          })
+
+    }
   }
 
 }

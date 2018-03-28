@@ -88,6 +88,8 @@ const mutation = new GraphQLObjectType({
                 email: {type: new GraphQLNonNull(GraphQLString) },
                 username: {type: new GraphQLNonNull(GraphQLString) },
                 password: {type: new GraphQLNonNull(GraphQLString) },
+                profileImage: {type: GraphQLString },
+                coverImage: {type: GraphQLString },
                 descripion: {type: GraphQLString }
             },
             resolve(parentVal, args) {

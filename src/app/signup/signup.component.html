@@ -13,8 +13,8 @@
       </small>
     </div>
     <div class="input-group">
-      <label for="password">Lastname</label>
-      <input type="password" name="password"
+      <label for="lastname">Lastname</label>
+      <input type="text" name="lastname"
       [formControl]="formControl.lastname">
       <small *ngIf="formControl.firstname.touched && (!formControl.firstname.valid)">
         LastName is required
@@ -57,6 +57,14 @@
       <small *ngIf="formControl.email.touched && (!formControl.email.valid)">
         Invalid email
       </small>
+    </div>
+    <div class="input-group">
+      <label for="profileImage">Profile Image</label>
+      <input type="file" #profileImage name="profileImage">
+    </div>
+    <div class="input-group">
+      <label for="coverImage">Cover Image</label>
+      <input type="file" #coverImage name="coverImage">
     </div>
 	<button type="submit" name="button">Submit</button>
   </form>
