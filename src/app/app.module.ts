@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { MusicPlayerModule } from './music-player/music-player.module'
 import * as config from './../../config.js';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import * as config from './../../config.js';
     PlayerComponent,
     ProgressComponent,
     HomeComponent,
-    MusicComponent
+    MusicComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import * as config from './../../config.js';
   ],
   providers: [
     ApiService,
-    MusicService
+    MusicService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
