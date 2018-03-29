@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add multer
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add --dev @types/node
 
 PATH: 
   /home/arvindo/miniconda3/bin:/home/arvindo/perl5/perlbrew/bin:/home/arvindo/perl5/perlbrew/perls/perl-5.20.1/bin:/home/arvindo/.linuxbrew/bin:/home/arvindo/bin:/home/arvindo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/local/java/jdk1.8.0_131/bin:/home/arvindo/Android/Sdk/tools:/home/arvindo/Android/Sdk/platform-tools:/usr/local/cuda-9.1/bin
@@ -79,7 +79,7 @@ npm manifest:
       "@angular/language-service": "^5.2.0",
       "@types/jasmine": "~2.8.3",
       "@types/jasminewd2": "~2.0.2",
-      "@types/node": "~6.0.60",
+      "@types/node": "^9.6.1",
       "codelyzer": "^4.0.1",
       "jasmine-core": "~2.8.0",
       "jasmine-spec-reporter": "~4.2.1",
@@ -308,13 +308,17 @@ Lockfile:
     dependencies:
       "@types/jasmine" "*"
   
-  "@types/node@^6.0.46", "@types/node@~6.0.60":
+  "@types/node@^6.0.46":
     version "6.0.96"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.96.tgz#7bf0bf40d6ce51e93762cc47d010c8cc5ebb2179"
   
   "@types/node@^9.4.6":
     version "9.4.7"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.7.tgz#57d81cd98719df2c9de118f2d5f3b1120dcd7275"
+  
+  "@types/node@^9.6.1":
+    version "9.6.1"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.1.tgz#e2d374ef15b315b48e7efc308fa1a7cd51faa06c"
   
   "@types/q@^0.0.32":
     version "0.0.32"

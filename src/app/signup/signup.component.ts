@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { LoginService } from '../login.service';
-import { matchingPasswords } from './../validators/matchPassword';
-import { emailValidator } from '../validators/emailVaildator';
+import { CustomValidators } from './../validators/customValidators';
 import {Observable} from 'rxjs/Observable';
 import { IArtist } from '../music-player/classes/iArtist';
 
@@ -27,8 +26,8 @@ export class SignupComponent implements OnInit {
           username: ['', [<any>Validators.required]],
           password: ['', [<any>Validators.required]],
           confirmPassword: ['', [<any>Validators.required]],
-          email: ['', Validators.compose([<any>Validators.required, emailValidator])]
-      }, {validator: matchingPasswords('password', 'confirmPassword')});
+          email: ['', Validators.compose([<any>Validators.required, CustomValidators.emailValidator])]
+      }, {validator: CustomValidators.matchingPasswords('password', 'confirmPassword')});
       this.formControl = this.form.controls;
    }
 

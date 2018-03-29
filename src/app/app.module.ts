@@ -20,7 +20,7 @@ import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { MusicPlayerModule } from './music-player/music-player.module'
-import * as config from './../../config.js';
+import {config} from './../../config';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { SignupComponent } from './signup/signup.component';

@@ -4,7 +4,7 @@ import { Observer } from 'rxjs/Observer';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as config from './../../config.js';
+import {config} from './../../config';
 import {IUser} from './login/classes/iUser';
 import { IArtist } from './music-player/classes/iArtist';
 
