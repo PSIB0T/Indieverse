@@ -1,35 +1,36 @@
 <div class="container">
-  <h2>Signup</h2>
+  <div class="login-container">
+    <div class="form-text">
+        <h1>Sign Up</h1>
+        <p>Indieverse is the best platform for the indies to rise and shine.</p>
+        <p>No signup fee! Get started now.</p>
+    </div>
   <form [formGroup]="form" (ngSubmit)="signup()">
     <small *ngIf="error">
       Username or password is incorrect
     </small>
     <div class="input-group">
-      <label for="username">Firstname</label>
       <input type="text" name="username"
-      [formControl]="formControl.firstname">
+      [formControl]="formControl.firstname" placeholder="Firstname">
       <small *ngIf="formControl.lastname.touched && (!formControl.lastname.valid)">
         FirstName is required
       </small>
     </div>
     <div class="input-group">
-      <label for="lastname">Lastname</label>
       <input type="text" name="lastname"
-      [formControl]="formControl.lastname">
+      [formControl]="formControl.lastname" placeholder="Lastname">
       <small *ngIf="formControl.firstname.touched && (!formControl.firstname.valid)">
         LastName is required
       </small>
     </div>
   
     <div class="input-group">
-      <label for="description">Description</label>
       <input type="text" name="description"
-      [formControl]="formControl.description">
+      [formControl]="formControl.description" placeholder="Description">
     </div>
     <div class="input-group">
-      <label for="username">Username</label>
       <input type="text" name="username"
-      [formControl]="formControl.username">
+      [formControl]="formControl.username" placeholder="Username">
       <small *ngIf="formControl.username.touched && (formControl.username.errors)">
         <span *ngIf="(formControl.username.errors.required)">
           Username is required
@@ -40,25 +41,22 @@
       </small>
     </div>
     <div class="input-group">
-      <label for="password">Password</label>
       <input type="password" name="password"
-      [formControl]="formControl.password">
+      [formControl]="formControl.password" placeholder="Password">
       <small *ngIf="formControl.password.touched && (!formControl.password.valid)">
         Password is required
       </small>
     </div>
     <div class="input-group">
-      <label for="password">Confirm password</label>
       <input type="password" name="confirmPassword"
-      [formControl]="formControl.confirmPassword">
+      [formControl]="formControl.confirmPassword" placeholder="Confirm Password">
       <small *ngIf="formControl.confirmPassword.touched && (form.errors) && (form.errors.mismatchedPasswords)">
         Passwords do not match
       </small>
     </div>
     <div class="input-group">
-      <label for="password">Email</label>
       <input type="text" name="email"
-      [formControl]="formControl.email">
+      [formControl]="formControl.email" placeholder="Email">
       <small *ngIf="formControl.email.touched && (formControl.email.errors)">
         <span *ngIf="(formControl.email.errors.required)">
           Email is required
@@ -78,4 +76,5 @@
     </div>
 	<button type="submit" name="button">Submit</button>
   </form>
+  </div>
 </div>
