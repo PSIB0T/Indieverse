@@ -30,8 +30,13 @@
       <label for="username">Username</label>
       <input type="text" name="username"
       [formControl]="formControl.username">
-      <small *ngIf="formControl.username.touched && (!formControl.username.valid)">
-        Username is required
+      <small *ngIf="formControl.username.touched && (formControl.username.errors)">
+        <span *ngIf="(formControl.username.errors.required)">
+          Username is required
+        </span>
+        <span *ngIf="(formControl.username.errors.usernameExists)">
+          Username is already taken
+        </span>
       </small>
     </div>
     <div class="input-group">
@@ -54,8 +59,13 @@
       <label for="password">Email</label>
       <input type="text" name="email"
       [formControl]="formControl.email">
-      <small *ngIf="formControl.email.touched && (!formControl.email.valid)">
-        Invalid email
+      <small *ngIf="formControl.email.touched && (formControl.email.errors)">
+        <span *ngIf="(formControl.email.errors.required)">
+          Email is required
+        </span>
+        <span *ngIf="(formControl.email.errors.emailExists)">
+          Email is already taken
+        </span>
       </small>
     </div>
     <div class="input-group">

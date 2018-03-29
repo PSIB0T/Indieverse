@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, AbstractControl, ValidationErrors } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { CustomValidators } from './../validators/customValidators';
 import {Observable} from 'rxjs/Observable';
@@ -19,19 +19,21 @@ export class SignupComponent implements OnInit {
   private error: any;
 
   constructor(private _fb: FormBuilder, private _loginService: LoginService) {
-      this.form = this._fb.group({
-          firstname: ['', [<any>Validators.required]],
-          lastname: ['', [<any>Validators.required]],
-          description: [''],
-          username: ['', [<any>Validators.required]],
-          password: ['', [<any>Validators.required]],
-          confirmPassword: ['', [<any>Validators.required]],
-          email: ['', Validators.compose([<any>Validators.required, CustomValidators.emailValidator])]
-      }, {validator: CustomValidators.matchingPasswords('password', 'confirmPassword')});
-      this.formControl = this.form.controls;
+
    }
 
   ngOnInit() {
+    this.form = this._fb.group({
+      firstname: ['', [<any>Validators.required]],
+      lastname: ['', [<any>Validators.required]],
+      description: [''],
+      username: ['', [<any>Validators.required], this.checkForUsername.bind(this)],
+      password: ['', [<any>Validators.required]],
+      confirmPassword: ['', [<any>Validators.required]],
+      email: ['', Validators.compose([<any>Validators.required, CustomValidators.emailValidator])
+              , this.checkForEmail.bind(this)]
+    }, {validator: CustomValidators.matchingPasswords('password', 'confirmPassword')});
+    this.formControl = this.form.controls;
   }
 
   signup() {
@@ -53,6 +55,31 @@ export class SignupComponent implements OnInit {
           })
 
     }
+  }
+
+  checkForUsername(control: AbstractControl): Promise<ValidationErrors> {
+    return this._loginService.checkOtherParams(control.value)
+                              .toPromise()
+                              .then((res) => {
+                                  if (res.length !== 0) {
+                                    return {
+                                      usernameExists: true
+                                    }
+                                  }
+                                  return null;
+                                })
+  }
+  checkForEmail(control: AbstractControl): Promise<ValidationErrors> {
+    return this._loginService.checkOtherParams(null, control.value)
+                              .toPromise()
+                              .then((res) => {
+                                  if (res.length !== 0) {
+                                    return {
+                                      emailExists: true
+                                    }
+                                  }
+                                  return null;
+                                })
   }
 
 }

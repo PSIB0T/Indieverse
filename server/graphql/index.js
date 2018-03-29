@@ -35,6 +35,20 @@ const query = new GraphQLObjectType({
                 return User.findById(args.userId)
             }
         },
+        userByOtherParams: {
+            type: new GraphQLList(UserType),
+            args: {
+                username: {
+                    type: GraphQLString
+                },
+                email: {
+                    type: GraphQLString
+                }
+            },
+            resolve(parentVal, args) {
+                return User.find(args)
+            }
+        },
         albums: {
             type: new GraphQLList(AlbumType),
             resolve(parentVal, args) {

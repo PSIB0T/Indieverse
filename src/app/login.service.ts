@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {config} from './../../config';
 import {IUser} from './login/classes/iUser';
 import { IArtist } from './music-player/classes/iArtist';
+import { ApolloQueryResult } from 'apollo-client';
 
 @Injectable()
 export class LoginService {
@@ -52,5 +53,24 @@ export class LoginService {
         `
         return this.apollo
                     .mutate({mutation})
+    }
+
+    checkOtherParams(username?: String, email?: String): Observable<IUser[]> {
+        let finalParamsList = '';
+        if (username) {
+            finalParamsList += `username: "${username}"`
+        }
+        if (email) {
+            finalParamsList += `email: "${email}"`
+        }
+        const query = gql`{
+                    userByOtherParams(${finalParamsList}){
+                        id
+                        username
+                    }
+            }`
+        return this.apollo
+                   .query({query})
+                   .map((res: any) => res.data.userByOtherParams)
     }
 }
