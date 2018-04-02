@@ -134,6 +134,31 @@ const mutation = new GraphQLObjectType({
                                 throw new Error(err);
                             });
             }
+        }, 
+        addMusic: {
+            type: MusicType,
+            args: {
+                title: {type: new GraphQLNonNull(GraphQLString) },
+                genre: {type: new GraphQLNonNull(GraphQLString) },
+                date: {type: GraphQLDate},
+                streamUrl: {type: new GraphQLNonNull(GraphQLString) },
+                albumId: {type: new GraphQLNonNull(GraphQLID) }
+            },
+            resolve(parentVal, args) {
+                let musicObj = Object.assign({}, args);
+                delete musicObj.albumId;
+
+                let music = new Music(musicObj);
+                return Album.findById(args.albumId)
+                            .then((album) => {
+                                if(!album) {
+                                    return Promise.reject('Album not found');
+                                }
+                                return album.addMusic(music);
+                            }).catch((err) => {
+                                throw new Error(err);
+                            })
+            }
         }
     })
 })

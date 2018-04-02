@@ -24,6 +24,8 @@ import {config} from './../../config';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { SignupComponent } from './signup/signup.component';
+import { UploadMusicComponent } from './upload-music/upload-music.component';
+import { UploadService } from './upload.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { SignupComponent } from './signup/signup.component';
     HomeComponent,
     MusicComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    UploadMusicComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { SignupComponent } from './signup/signup.component';
   providers: [
     ApiService,
     MusicService,
-    LoginService
+    LoginService,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })

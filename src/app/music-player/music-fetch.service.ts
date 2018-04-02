@@ -22,6 +22,7 @@ export class MusicFetchService {
                                 coverArt
                                 album{
                                     title
+                                    albumArt
                                     artist{
                                         username
                                     }

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="login-container">
+    <div class="form-text">
+        <h1>Upload Music</h1>
+    </div>
+  <form [formGroup]="form" (ngSubmit)="uploadMusic()">
+    <div class="input-group">
+      <input type="text" name="title"
+      [formControl]="formControl.title" placeholder="Title">
+      <small *ngIf="formControl.title.touched && (!formControl.title.valid)">
+        Title is required
+      </small>
+    </div>
+    <div class="input-group">
+      <select [formControl]="formControl.genre">
+        <option value="">Select genre</option>
+        <option *ngFor="let genre of genres" value="{{genre}}">{{genre}}</option>
+      </select>
+    </div>
+  
+    <div class="input-group">
+      <input type="date" name="date" placeholder="Date" [formControl]="formControl.date">
+    </div>
+    <div class="input-group">
+      <select [formControl]="formControl.albumId">
+        <option value="">Select album</option>
+        <option *ngFor="let album of albums" value="{{album.id}}">{{album.title}}</option>
+      </select>
+    </div>
+    <div class="upload-section">
+      <label for="music">Music</label>
+      <input type="file" #music name="music">
+    </div>
+
+    
+	<button type="submit" name="button" [disabled]="!form.valid">Submit</button>
+  </form>
+  </div>
+</div>

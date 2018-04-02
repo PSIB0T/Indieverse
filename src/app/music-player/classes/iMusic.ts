@@ -8,4 +8,5 @@ export interface IMusic {
     coverArt?: string;
     album?: IAlbum;
     featuring?: IArtist[];
+    genre?: string;
 };

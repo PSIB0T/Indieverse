@@ -2,7 +2,7 @@
   <app-music-details [title]="isLoading?currentMusic.title:''" 
                       [albumTitle]="!isLoading?currentMusic.album.title:''"
                       [artistName]="!isLoading?currentMusic.album.artist.username:''"
-                      [coverArt]="!isLoading?currentMusic.coverArt:''">
+                      [coverArt]="!isLoading?currentMusic.album.albumArt:''">
 
   </app-music-details>
   <div class="bottom-fixed">

@@ -28,6 +28,9 @@ var storage = multer.diskStorage({
       case 'image/png':
         cb(null, Date.now() + '.png')
         break;
+      case 'audio/mp3':
+        cb(null, Date.now() + '.mp3')
+        break;
       default:
         cb(null, Date.now() + '')
     }
