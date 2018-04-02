@@ -295,6 +295,18 @@ footer {
     padding: 2em;
 }
 
+
+
+.contact-details {
+    width: 40%;
+    float: left;
+}
+
+agm-map {
+    height: 300px;
+}
+
+
 @media only screen and (max-width: 768px) {
     .hero-text h1 {
         font-size: 4em;
@@ -350,8 +362,11 @@ footer {
     #section2 .section-text h1{
         font-size: 2.5em;
     }
+
+    .contact-details {
+        float: none;
+        width: 100%;
+        margin-bottom: 1em;
+    }
 }
 
-agm-map {
-    height: 300px;
-}
