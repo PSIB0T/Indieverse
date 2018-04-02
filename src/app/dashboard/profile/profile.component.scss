@@ -29,6 +29,12 @@
     }
 }
 
+.profile-parent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .profile {
     color: white;
     height: 35vh;
@@ -77,8 +83,10 @@
     padding: 1em;
     width: 100%;
     color: white;
+    flex: 1 1 auto;
     display: flex;
     flex-wrap: wrap;
+    overflow-y: scroll;
 }
 
 .albums,.songs {
