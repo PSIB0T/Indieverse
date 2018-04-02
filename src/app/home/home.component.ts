@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   musicId = '5ab99cc3c7c9231670abd679';
+  lat: number;
+  lng: number;
   artists = [{
     name: 'DJ Khaled',
     image: 'https://images.complex.com/complex/image/upload/c_fill,f_auto,g_faces:auto,h_900,q_auto,w_900/m6mjx9nhyk72xtqj3e2p.jpg',
@@ -20,7 +22,10 @@ export class HomeComponent implements OnInit {
     image: 'https://pbs.twimg.com/profile_images/955803874463571969/-R8etznz_400x400.jpg',
     sub_count: 306144
   }]
-  constructor() { }
+  constructor() {
+    this.lat = 19.0452358
+    this.lng = 72.8887877;
+  }
 
   ngOnInit() {
   }

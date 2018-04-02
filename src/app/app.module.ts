@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AgmCoreModule } from '@agm/core';
 import { MatAutocompleteModule, MatInputModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { MusicSearchComponentComponent } from './music-search-component/music-search-component.component';
@@ -55,7 +56,10 @@ import { UploadAlbumComponent } from './upload-album/upload-album.component';
     MusicPlayerModule,
     HttpLinkModule,
     ApolloModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyApzuN6LcJDNKD4bHfHhWmGaGhEar2X5pw'
+    })
   ],
   providers: [
     ApiService,
