@@ -1,1 +1,4 @@
-<app-card [contents]="genres"></app-card>
+<app-card [contents]="genres" [isSelect]="isSelect" (loadMusicEvent)="loadMusic($data)"
+          [currentMusics]="currentMusics">
+
+</app-card>

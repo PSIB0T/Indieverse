@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LoadMusic } from './../loadMusic.service';
+import { IMusic } from '../../music-player/classes/iMusic';
 
 @Component({
   selector: 'app-card',
@@ -6,8 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() contents = [];
-  constructor() { }
+  @Input() contents;
+  @Input() currentMusics: IMusic[];
+  @Input() isSelect: boolean;
+  @Output() loadMusicEvent;
+  constructor(private _loadMusic: LoadMusic) {
+    this.loadMusicEvent = new EventEmitter();
+  }
+
+  loadMusic(name: string) {
+    this.loadMusicEvent.emit(name);
+  }
 
   ngOnInit() {
   }

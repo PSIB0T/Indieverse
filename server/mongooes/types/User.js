@@ -10,6 +10,10 @@ export const UserSchema = new Schema({
         type: String,
         required: true
     },
+    country: {
+        type: String,
+        default: 'India',
+    },
     lastname: {
         type: String,
         required: true

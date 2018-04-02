@@ -74,7 +74,7 @@
       <label for="coverImage">Cover Image</label>
       <input type="file" #coverImage name="coverImage">
     </div>
-	<button type="submit" name="button">Submit</button>
+	<button type="submit" name="button" [disabled]="!form.valid">Submit</button>
   </form>
   </div>
 </div>

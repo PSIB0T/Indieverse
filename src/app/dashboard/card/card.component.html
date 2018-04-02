@@ -1,8 +1,23 @@
-<div class="card-parent">
+<div class="card-parent" [style.display]="isSelect?'none':'flex'">
   <div class="card" *ngFor="let content of contents">
-      <div class="card-content">
+      <div class="card-content" (click)="loadMusic(content.name)">
         <img [src]="content.image" class="image" alt="{{content.name}}">
         <h3>{{content.name}}</h3>
       </div>
   </div>
+</div>
+
+<div class="table" [style.display]="!isSelect?'none':'block'">
+  <table class="table-content">
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Album</th>
+    </tr>
+    <tr *ngFor="let music of currentMusics">
+      <td>{{music.title}}</td>
+      <td>{{music.album.title}}</td>
+      <td>{{music.album.artist.username}}</td>
+    </tr>
+  </table>
 </div>

@@ -1,0 +1,4 @@
+1) Upload album and music page
+2) Search (both artist and music)
+3) Login (backend)
+4) 

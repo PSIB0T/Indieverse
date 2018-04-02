@@ -12,6 +12,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ArtistService } from './artist.service';
 import { AlbumComponent } from './album/album.component';
+import { LoadMusic } from './loadMusic.service';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { AlbumComponent } from './album/album.component';
                  ChartsComponent,
                  ProfileComponent,
                  AlbumComponent],
-  providers: [ArtistService]
+  providers: [ArtistService,
+              LoadMusic]
 })
 export class DashboardModule { }
