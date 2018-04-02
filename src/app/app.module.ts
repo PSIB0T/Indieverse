@@ -26,6 +26,7 @@ import { LoginService } from './login.service';
 import { SignupComponent } from './signup/signup.component';
 import { UploadMusicComponent } from './upload-music/upload-music.component';
 import { UploadService } from './upload.service';
+import { UploadAlbumComponent } from './upload-album/upload-album.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { UploadService } from './upload.service';
     MusicComponent,
     LoginComponent,
     SignupComponent,
+    UploadAlbumComponent,
     UploadMusicComponent
   ],
   imports: [
