@@ -31,6 +31,9 @@ var storage = multer.diskStorage({
       case 'audio/mp3':
         cb(null, Date.now() + '.mp3')
         break;
+      case 'audio/x-m4a':
+        cb(null, Date.now() + '.m4a')
+        break;
       default:
         cb(null, Date.now() + '')
     }
