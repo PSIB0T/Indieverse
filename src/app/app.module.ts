@@ -24,6 +24,7 @@ import {config} from './../../config';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { SignupComponent } from './signup/signup.component';
+import { UploadAlbumComponent } from './upload-album/upload-album.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SignupComponent } from './signup/signup.component';
     HomeComponent,
     MusicComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    UploadAlbumComponent
   ],
   imports: [
     BrowserModule,
