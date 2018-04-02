@@ -14,6 +14,12 @@
     }  
 }
 
+.album_container_parent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .album_container {
     background-color:  #6f047b;
     padding: 1em;
@@ -28,7 +34,6 @@
 .album_container img {
     height: 200px;
     width: 200px;
-
 }
 
 .album_image, .album_text {
@@ -65,6 +70,7 @@
     background-color: black;
     color: white;
     padding: 1em;
+    flex: 1 1 auto;
 }
 
 .album_songs ol li {
