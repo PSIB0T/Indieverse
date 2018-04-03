@@ -1,3 +1,4 @@
+<app-main-nav></app-main-nav>
 <div class="container">
 	<div class="login-container">
 		<div class="form-text">
@@ -24,5 +25,6 @@
 	
 			<button type="submit" name="button" [disabled]="!form.valid">Login</button>
 		</form>
+		<p>Don't have an account? <a [routerLink]="['/signup']">Signup now!</a></p>
 	</div>
 </div>

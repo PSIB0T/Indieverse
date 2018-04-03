@@ -1,0 +1,13 @@
+<div class="hero">
+  <div class="nav">
+    <label for="toggle">&#9776;</label>
+    <input type="checkbox" id="toggle" />
+    <div class="menu">
+      <a href="">home</a>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a [routerLink]="['/player', musicId]">Music</a>
+      <a [routerLink]="['/login']">Login</a>
+      <a [routerLink]="['/signup']">Sign Up</a>
+    </div>
+  </div>
+</div>

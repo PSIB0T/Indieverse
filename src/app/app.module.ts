@@ -28,6 +28,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UploadMusicComponent } from './upload-music/upload-music.component';
 import { UploadService } from './upload.service';
 import { UploadAlbumComponent } from './upload-album/upload-album.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UploadAlbumComponent } from './upload-album/upload-album.component';
     LoginComponent,
     SignupComponent,
     UploadAlbumComponent,
-    UploadMusicComponent
+    UploadMusicComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,

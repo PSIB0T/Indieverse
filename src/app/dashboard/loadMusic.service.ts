@@ -16,6 +16,7 @@ export class LoadMusic {
     loadFromGenre(name: string) {
         const query = gql`{
             musics(genre:"${name}"){
+                id
                 genre
                 streamUrl
                 title

@@ -63,3 +63,18 @@
     color: white;
     font-family: 'Open Sans', sans-serif
 }
+
+.table {
+    text-align: center;
+
+    .table-row{
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        td {
+            padding: 10px;
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    }
+}

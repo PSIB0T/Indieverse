@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadMusic } from '../loadMusic.service';
 import { IMusic } from '../../music-player/classes/iMusic';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-genre',
@@ -37,7 +38,7 @@ export class GenreComponent implements OnInit {
     image: 'assets/images/icons/classical.svg',
     type: 'Genre'
   }]
-  constructor(private _loadMusic: LoadMusic) {
+  constructor(private _loadMusic: LoadMusic, private _router: Router) {
     this.isSelect = false;
     this.currentMusics = [];
    }
@@ -53,6 +54,10 @@ export class GenreComponent implements OnInit {
                       this.currentMusics = res;
                       console.log(res);
                     })
+  }
+
+  playMusic(id: string) {
+    this._router.navigate(['player', id]);
   }
 
 }
