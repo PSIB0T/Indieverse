@@ -20,7 +20,7 @@ export class UploadAlbumComponent implements OnInit {
     this.form = this._fb.group({
       title: ['', [<any>Validators.required]],
       description: [''],
-      date: ['', [<any>Validators.required]]      
+      date: ['', [<any>Validators.required]]
     });
     this.formControl = this.form.controls;
   }

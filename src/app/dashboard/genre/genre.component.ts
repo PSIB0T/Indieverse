@@ -46,8 +46,8 @@ export class GenreComponent implements OnInit {
   }
 
   loadMusic(name: string) {
-      console.log('gg');
-      this._loadMusic.loadFromGenre('Handcrafted Concrete Keyboard')
+      console.log(name);
+      this._loadMusic.loadFromGenre(name.toLowerCase())
                     .subscribe((res: IMusic[]) => {
                       this.isSelect = true;
                       this.currentMusics = res;

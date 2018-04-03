@@ -352,6 +352,11 @@ footer {
     }
 }
 
-agm-map {
+footer {
+    display: flex;
+}
+
+footer agm-map {
     height: 300px;
+    width: 300px;
 }

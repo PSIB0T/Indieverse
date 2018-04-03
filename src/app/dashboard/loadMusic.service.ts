@@ -31,4 +31,17 @@ export class LoadMusic {
         return this.apollo.query({query})
                           .map((res: any) => res.data.musics)
     }
+
+    searchMusic(queryString: string) {
+      const query = gql`{
+        musics(title:"${queryString}"){
+            id
+            title
+          }
+        }
+      `
+
+      return this.apollo.query({query})
+                 .map((res: any) => res.data.musics)
+    }
 }

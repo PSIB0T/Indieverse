@@ -71,9 +71,18 @@ const query = new GraphQLObjectType({
             args: {
                 genre: {
                     type: GraphQLString
+                },
+                title: {
+                    type: GraphQLString
                 }
             },
             resolve(parentVal, args) {
+                if (args.hasOwnProperty('title')) {
+                    console.log('gg');
+                    return Music.find({
+                        title: { $regex: new RegExp(args.title, "i") }
+                    })
+                }
                 return Music.find(args);
             }
         },

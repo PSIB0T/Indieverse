@@ -1,5 +1,5 @@
 <div class="container">
-  <app-music-details [title]="isLoading?currentMusic.title:''" 
+  <app-music-details [title]="!isLoading?currentMusic.title:''" 
                       [albumTitle]="!isLoading?currentMusic.album.title:''"
                       [artistName]="!isLoading?currentMusic.album.artist.username:''"
                       [coverArt]="!isLoading?currentMusic.album.albumArt:''">

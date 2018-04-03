@@ -84,8 +84,14 @@
 </section>
 
 <footer>
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16" >
-      <agm-marker [latitude]="lat" [longitude]="lng">
-      </agm-marker>
-  </agm-map>
+  <div class="contact">
+    <h1>Contact us</h1>
+  </div>
+  <div class="map">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16" >
+          <agm-marker [latitude]="lat" [longitude]="lng">
+          </agm-marker>
+      </agm-map>
+  </div>
+
 </footer>

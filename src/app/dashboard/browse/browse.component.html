@@ -2,10 +2,11 @@
   <header>
     <div class="search-container">
       <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
-      <input type="text" list="songs" class="search-box" name="search" placeholder="search">
-      <datalist id="songs">
-          <option *ngFor="let song of songs" value="{{song}}">
+      <input type="text" list="songs" #searchInput class="search-box" name="search" placeholder="search">
+      <datalist id="songs" #dlist>
+          <option *ngFor="let song of songs" data-value="{{song.title}}">
       </datalist>
+      
     </div>
     <div class="browse-content">
       <h1 class="cat-title">Browse</h1>
