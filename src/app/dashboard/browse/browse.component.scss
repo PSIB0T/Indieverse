@@ -131,6 +131,48 @@ a {
     }
 }
 
+.search-results {
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+
+    .music, .albums {
+        flex: 1;
+    }
+
+    .result-container {
+        display: flex;
+        justify-content: space-around;
+        &:hover {
+            background: rgba(255,255, 255, 0.2)
+        }
+        .image-container {
+            height: 100px;
+            width: 100px;
+            background-position: center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+
+        .result-content {
+            flex: 0.8;
+        }
+    }
+}
+
+.black-box {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    @media #{$normal} {
+        left: #{$navWidth-small};
+    }
+    @media #{$phone} {
+        left: 0
+    }
+}
+
 .content {
     padding-top: 142px;
 }

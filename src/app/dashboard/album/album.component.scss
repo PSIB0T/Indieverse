@@ -31,6 +31,14 @@
     }
 }
 
+.image-section{
+    height: 200px;
+    width: 200px;
+    background-position: center !important;
+    background-size: cover !important;
+    box-shadow: 10px 10px 5px rgba(15, 15, 15, 0.411);
+}
+
 .album_container img {
     height: 200px;
     width: 200px;

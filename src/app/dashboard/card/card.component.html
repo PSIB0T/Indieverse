@@ -16,8 +16,8 @@
     </tr>
     <tr *ngFor="let music of currentMusics">
       <td>{{music.title}}</td>
-      <td>{{music.album.title}}</td>
       <td>{{music.album.artist.username}}</td>
+      <td>{{music.album.title}}</td>
     </tr>
   </table>
 </div>

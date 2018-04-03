@@ -41,7 +41,7 @@ export class UploadMusicComponent implements OnInit {
     this._uploadService.loadAlbums(profileId)
                        .subscribe((user: IArtist) => {
                          if (user) {
-                            this.albums = user.albums;
+                            this.albums = user.albums.filter(album => album != null);
                          }
                        })
   }

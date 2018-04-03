@@ -2,10 +2,7 @@
   <header>
     <div class="search-container">
       <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
-      <input type="text" list="songs" #searchInput class="search-box" name="search" placeholder="search">
-      <datalist id="songs" #dlist>
-          <option *ngFor="let song of songs" data-value="{{song.title}}">
-      </datalist>
+      <input type="text" #searchInput class="search-box" name="search" placeholder="search">
       
     </div>
     <div class="browse-content">
@@ -32,8 +29,32 @@
         </nav>
     </div>
   </header>
+  <div class="content" [style.display]="searchState?'block':'none'">
+    <div class="search-results">
+      <div class="music">
+        <h3>Music</h3>
+        <div class="result-container" *ngFor="let song of songs" (click)="selectSong(song)">
+          <div class="image-container" [style.background]="'url(' + song.album.albumArt+ ')'"></div>
+          <div class="result-content">
+            <h3>{{song.title}}</h3>
+            <h5>{{song.album.artist.username}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="albums">
+          <h3>Albums</h3>
+          <div class="result-container" *ngFor="let album of albums" (click)="selectAlbum(album)">
+            <div class="image-container" [style.background]="'url(' + album.albumArt+ ')'"></div>
+            <div class="result-content">
+              <h3>{{album.title}}</h3>
+              <h5>{{album.artist.username}}</h5>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
 
-  <div class="content">
-    <router-outlet name="browse"></router-outlet>
+  <div class="content" [style.display]="!searchState?'block':'none'">
+      <router-outlet name="browse"></router-outlet>
   </div>
 </div>

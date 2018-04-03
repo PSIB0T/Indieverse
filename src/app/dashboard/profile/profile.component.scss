@@ -110,9 +110,11 @@
     cursor: pointer;
 }
 
-.albums .album_item img{
+.albums .album_item .image-section{
     height: 150px;
     width: 150px;
+    background-position: center !important;
+    background-size: cover !important;
 }
 
 .albums ul {

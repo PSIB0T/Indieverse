@@ -51,7 +51,17 @@ const query = new GraphQLObjectType({
         },
         albums: {
             type: new GraphQLList(AlbumType),
+            args: {
+                title: {
+                    type: GraphQLString
+                }
+            },
             resolve(parentVal, args) {
+                if (args.hasOwnProperty('title')) {
+                    return Album.find({
+                        title: { $regex: new RegExp(args.title, "i") }
+                    });
+                }
                 return Album.find();
             }
         },

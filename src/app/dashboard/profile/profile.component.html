@@ -23,7 +23,8 @@
       <ul>
         <li *ngFor="let album of albums"> 
           <div class="album_item">
-            <img src="{{album.albumArt}}" alt="{{album.title}}">
+            <div class="image-section" [style.background]="'url(' + album.albumArt + ')'"></div>
+            <!-- <img src="{{album.albumArt}}" alt="{{album.title}}"> -->
             <br>
             <a [routerLink]="['/album', album.id]">{{album.title}}</a>
           </div>

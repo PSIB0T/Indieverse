@@ -37,12 +37,36 @@ export class LoadMusic {
         musics(title:"${queryString}"){
             id
             title
+            album {
+              albumArt
+              artist{
+                username
+              }
+            }
           }
         }
       `
 
       return this.apollo.query({query})
                  .map((res: any) => res.data.musics)
+    }
+
+    searchAlbum(queryString: string) {
+      const query = gql`{
+        albums(title:"${queryString}"){
+          title
+          id
+          albumArt
+          artist{
+            username
+            id
+          }
+        }
+      }
+      `
+
+      return this.apollo.query({query})
+                 .map((res: any) => res.data.albums)
     }
 
     loadUsers() {
