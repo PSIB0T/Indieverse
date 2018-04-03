@@ -5,7 +5,7 @@
         <p>Gooj job! you are now taking your baby steps towards success.</p>
         <p>Good Luck.</p>
     </div>
-  <form [formGroup]="form" (ngSubmit)="signup()">
+  <form [formGroup]="form" (ngSubmit)="uploadAlbum()">
     <small *ngIf="error">
       Username or password is incorrect
     </small>
@@ -28,9 +28,19 @@
       </small>
     </div>
     <div class="input-group">
+      <select [formControl]="formControl.userId">
+        <option value="">Artist of this album</option>
+        <option *ngFor="let user of users" value="{{user.id}}">{{user.username}}</option>
+      </select>
+      <small *ngIf="formControl.userId.touched && (!formControl.userId.valid)">
+        Please select an artist
+      </small>
+    </div>
+    <div class="input-group">
       <label for="albumArt">Album Art</label>
       <input type="file" #albumArt name="albumArt">
     </div>
+    
 	<button type="submit" name="button">Submit</button>
   </form>
   </div>

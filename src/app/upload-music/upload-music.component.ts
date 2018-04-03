@@ -4,6 +4,7 @@ import { UploadService } from '../upload.service';
 import { IAlbum } from '../music-player/classes/iAlbum';
 import { IArtist } from '../music-player/classes/iArtist';
 import { IMusic } from '../music-player/classes/iMusic';
+import { config } from '../../../config';
 
 @Component({
   selector: 'app-upload-music',
@@ -16,7 +17,7 @@ export class UploadMusicComponent implements OnInit {
 
   albums: IAlbum[];
   genres: string[];
-  profileId = '5ab9e960de66771fdbe92417'
+  profileId = config.profileId;
   private form: FormGroup;
   private formControl: any;
   private error: any;

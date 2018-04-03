@@ -3,6 +3,7 @@ import { ArtistService } from './../artist.service';
 import { IArtist } from '../../music-player/classes/iArtist';
 import { IAlbum } from '../../music-player/classes/iAlbum';
 import { IMusic } from '../../music-player/classes/iMusic';
+import { config } from '../../../../config';
 
 @Component({
   selector: 'app-profile',
@@ -20,7 +21,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private _artistService: ArtistService) {
     this.top_songs = [];
-    this.artistId = '5ab9e960de66771fdbe92417';
+    this.artistId = config.profileId;
   }
 
   ngOnInit() {
@@ -28,14 +29,15 @@ export class ProfileComponent implements OnInit {
                        .subscribe((artist: IArtist) => {
                          this.artist_name = artist.username;
                          this.cover_image = artist.coverImage;
-                         this.albums = artist.albums.map((album) => {
+                         const filteredAlbums = artist.albums.filter(album => album !== null);
+                         this.albums = filteredAlbums.map((album) => {
                            return {
                              id: album.id,
                              title: album.title,
                              albumArt: album.albumArt
                            }
                          })
-                         artist.albums.forEach((album) => {
+                         filteredAlbums.forEach((album) => {
                           album.musics.forEach((music) => {
                             this.top_songs.push(music);
                           })

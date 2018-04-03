@@ -39,7 +39,7 @@ form,.form-text {
     max-width: 960px;
 }
 
-.input-group input{
+.input-group input, .input-group select{
     width: 60%;
     padding-left: 1em;
     height: 46px;
@@ -49,6 +49,9 @@ form,.form-text {
         height: 40px;
         width: 100%;
     }
+}
+.input-group select{
+    background: white;
 }
 
 button {

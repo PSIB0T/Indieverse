@@ -126,6 +126,7 @@ const mutation = new GraphQLObjectType({
                 title: {type: new GraphQLNonNull(GraphQLString) },
                 descripion: {type: GraphQLString },
                 date: {type: GraphQLDate},
+                albumArt: {type: GraphQLString },
                 artistId: {type: new GraphQLNonNull(GraphQLID) }
             },
             resolve(parentVal, args) {
@@ -133,6 +134,7 @@ const mutation = new GraphQLObjectType({
                 let albumObj = Object.assign({}, args);
                 delete albumObj.artistId
                 let album = new Album(albumObj)
+                console.log(args);
 
                 return User.findById(args.artistId)
                             .then((user) => {

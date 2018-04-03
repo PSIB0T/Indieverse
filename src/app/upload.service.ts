@@ -8,6 +8,7 @@ import { config } from './../../config';
 import { ApolloQueryResult } from 'apollo-client';
 import 'rxjs/add/operator/map';
 import { IMusic } from './music-player/classes/iMusic';
+import { IAlbum } from './music-player/classes/iAlbum';
 
 @Injectable()
 export class UploadService {
@@ -39,6 +40,17 @@ export class UploadService {
         }
         `
         return this.apollo.mutate({mutation});
+    }
+
+    uploadAlbum(album: IAlbum) {
+        const mutation = gql`
+        mutation addAlbum{
+            addAlbum(title:"${album.title}" artistId:"${album.artist.id}" descripion:"${album.description}" albumArt: "${album.albumArt}"){
+              title
+            }
+          }
+                `
+        return this.apollo.mutate({mutation})
     }
 
     uploadFile(file: File) {

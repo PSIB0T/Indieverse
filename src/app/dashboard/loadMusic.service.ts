@@ -44,4 +44,16 @@ export class LoadMusic {
       return this.apollo.query({query})
                  .map((res: any) => res.data.musics)
     }
+
+    loadUsers() {
+      const query = gql`{
+        users{
+            id
+            username
+          }
+        }
+      `
+      return this.apollo.query({query})
+                 .map((res: any) => res.data.users)
+    }
 }
