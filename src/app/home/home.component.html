@@ -84,14 +84,21 @@
 </section>
 
 <footer>
-  <div class="contact">
-    <h1>Contact us</h1>
+  <h1>Contact us</h1>
+  <div class="contact-us">
+      <div class="contact-details">
+          <h3>Arvind</h3>
+          <a href="mailto:2015arvind.narayanan@ves.ac.in">2015arvind.narayanan@ves.ac.in</a>
+          <h3>Onkar</h3>
+          <a href="mailto:2015onkarsingh.bagga@ves.ac.in">2015onkarsingh.bagga@ves.ac.in</a>
+          <h3>Rohit</h3>
+          <a href="mailto:2015rohit.ahuja@ves.ac.in">2015rohit.ahuja@ves.ac.in</a>
+        </div>
+        <div class="map">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16" >
+                <agm-marker [latitude]="lat" [longitude]="lng">
+                </agm-marker>
+            </agm-map>
+        </div>
   </div>
-  <div class="map">
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16" >
-          <agm-marker [latitude]="lat" [longitude]="lng">
-          </agm-marker>
-      </agm-map>
-  </div>
-
 </footer>
