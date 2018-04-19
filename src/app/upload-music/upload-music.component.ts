@@ -4,7 +4,8 @@ import { UploadService } from '../upload.service';
 import { IAlbum } from '../music-player/classes/iAlbum';
 import { IArtist } from '../music-player/classes/iArtist';
 import { IMusic } from '../music-player/classes/iMusic';
-import { config } from '../../../config';
+declare var require: any;
+const config = require('./../../../config.json');
 
 @Component({
   selector: 'app-upload-music',
@@ -17,12 +18,13 @@ export class UploadMusicComponent implements OnInit {
 
   albums: IAlbum[];
   genres: string[];
-  profileId = config.profileId;
-  private form: FormGroup;
-  private formControl: any;
-  private error: any;
+  profileId: string;
+  public form: FormGroup;
+  public formControl: any;
+  public error: any;
 
   constructor(private _fb: FormBuilder, private _uploadService: UploadService) {
+    this.profileId = config.profileId;
     this.genres = ['heavy metal', 'party', 'jazz', 'rock', 'techno', 'classical']
   }
 

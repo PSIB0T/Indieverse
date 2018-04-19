@@ -3,7 +3,8 @@ import { ArtistService } from './../artist.service';
 import { IArtist } from '../../music-player/classes/iArtist';
 import { IAlbum } from '../../music-player/classes/iAlbum';
 import { IMusic } from '../../music-player/classes/iMusic';
-import { config } from '../../../../config';
+declare var require: any;
+const config = require('./../../../../config.json');
 
 @Component({
   selector: 'app-profile',

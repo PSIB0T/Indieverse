@@ -13,10 +13,10 @@ import { IArtist } from '../music-player/classes/iArtist';
 export class UploadAlbumComponent implements OnInit {
 
   @ViewChild('albumArt') albumArt: ElementRef;
-  private form: FormGroup;
-  private formControl: any;
-  private error: any;
-  private profileId: string;
+  public form: FormGroup;
+  public formControl: any;
+  public error: any;
+  public profileId: string;
   users: IArtist[];
 
   constructor(private _fb: FormBuilder,

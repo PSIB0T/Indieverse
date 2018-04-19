@@ -5,7 +5,6 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IMusic } from './../music-player/classes/iMusic';
-import { config } from './../../../config';
 import { ApolloQueryResult } from 'apollo-client';
 
 @Injectable()

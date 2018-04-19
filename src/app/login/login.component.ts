@@ -10,10 +10,10 @@ import { IUser } from './classes/iUser'
 })
 export class LoginComponent implements OnInit {
 
-  private form: FormGroup;
-  private formControl: any;
-  private user: IUser
-  private error: any;
+  public form: FormGroup;
+  public formControl: any;
+  public user: IUser
+  public error: any;
 
   constructor(private _fb: FormBuilder, private _loginService: LoginService) {
       this.form = this._fb.group({

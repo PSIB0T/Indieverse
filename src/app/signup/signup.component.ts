@@ -14,9 +14,9 @@ export class SignupComponent implements OnInit {
   @ViewChild('profileImage') profileImage;
   @ViewChild('coverImage') coverImage;
 
-  private form: FormGroup;
-  private formControl: any;
-  private error: any;
+  public form: FormGroup;
+  public formControl: any;
+  public error: any;
 
   constructor(private _fb: FormBuilder, private _loginService: LoginService) {
 

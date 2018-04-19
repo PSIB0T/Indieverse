@@ -1,0 +1,5 @@
+{
+    "mongodb": "mongodb://indieuser:indieuser@ds014578.mlab.com:14578/indieverse",
+    "server": "http://localhost:8080",
+    "profileId": "5ac339698332610e76a76df3"
+}

@@ -4,10 +4,11 @@ import { Observer } from 'rxjs/Observer';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {config} from './../../config';
 import {IUser} from './login/classes/iUser';
 import { IArtist } from './music-player/classes/iArtist';
 import { ApolloQueryResult } from 'apollo-client';
+declare var require: any;
+const config = require('./../../config.json');
 
 @Injectable()
 export class LoginService {

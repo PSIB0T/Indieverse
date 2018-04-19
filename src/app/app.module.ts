@@ -20,8 +20,7 @@ import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { MusicPlayerModule } from './music-player/music-player.module'
-import {config} from './../../config';
+import { MusicPlayerModule } from './music-player/music-player.module';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { SignupComponent } from './signup/signup.component';
@@ -29,6 +28,7 @@ import { UploadMusicComponent } from './upload-music/upload-music.component';
 import { UploadService } from './upload.service';
 import { UploadAlbumComponent } from './upload-album/upload-album.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+declare var require: any;
 
 @NgModule({
   declarations: [
@@ -73,6 +73,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 })
 export class AppModule {
   constructor(_appolo: Apollo, httpLink: HttpLink) {
+    const config = require('./../../config.json');
     _appolo.create({
       link: httpLink.create({ uri: config.server + '/graphql' }),
       cache: new InMemoryCache()

@@ -4,11 +4,12 @@ import { Observer } from 'rxjs/Observer';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { config } from './../../config';
 import { ApolloQueryResult } from 'apollo-client';
 import 'rxjs/add/operator/map';
 import { IMusic } from './music-player/classes/iMusic';
 import { IAlbum } from './music-player/classes/iAlbum';
+declare var require: any;
+const config = require('./../../config.json');
 
 @Injectable()
 export class UploadService {

@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 import {UserSchema, 
         AlbumSchema,
         MusicSchema} from './types';
-import config from './../../config';
+import configjson from './../../config.json';
+const config = configjson;
 
 mongoose.connect(config.mongodb);
 
