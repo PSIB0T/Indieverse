@@ -1,5 +1,6 @@
 const express = require('express');
 const expressGraphQL = require('express-graphql');
+var { graphqlHTTP } = require('express-graphql');
 
 const {schema} = require('./server_prod/graphql/index');
 
@@ -14,7 +15,7 @@ const app = express();
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
 
-app.use('/graphql', expressGraphQL({
+app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true
 }));
