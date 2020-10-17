@@ -23,6 +23,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
+## Running project on docker
+
+To run the project on Docker, run the following commands:
+```bash
+docker build -t psib0t/indieverse . # Build image
+docker run --name av-app-container -d -p 8080:80 psib0t/indieverse # Run the container
+```
+Then open a browser and go to http://localhost:8080
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
