@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 // ./src/app/music/shared/api.service.ts
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 
 @Injectable()
 export class ApiService {
@@ -8,7 +8,7 @@ export class ApiService {
     clientId = 'WSHQEBO9PuA7NSFJj2TDNMLoJaoP2tG2'
 
     constructor(
-      private http: Http
+      private http: HttpClient
     ) {}
 
     get(url, attachClientId?) {

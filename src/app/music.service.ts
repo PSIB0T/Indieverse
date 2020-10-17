@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ApiService } from './api.service';
-import 'rxjs/Rx';
+// import 'rxjs/Rx';
 
 @Injectable()
 export class MusicService {
@@ -20,9 +21,8 @@ export class MusicService {
   }
 
   getPlaylistTracks () {
-      return this.__apiService.get('https://api.soundcloud.com/playlists/261435196', true)
-                              .map(res => res.json())
-                              .map(data => data.tracks);
+      return this.__apiService.get('https://api.soundcloud.com/playlists/261435196', true).pipe(
+                              map((data: any) => data.tracks));
   }
 
   randomTrack(tracks) {
@@ -40,10 +40,9 @@ export class MusicService {
   }
 
   findTracks(value) {
-    return this.__apiService.get(`${this.__apiService.prepareUrl('https://api.soundcloud.com/tracks')}&q=${value}`, false)
-      .debounceTime(300)
-      .distinctUntilChanged()
-      .map(res => res.json())
+    return this.__apiService.get(`${this.__apiService.prepareUrl('https://api.soundcloud.com/tracks')}&q=${value}`, false).pipe(
+      debounceTime(300),
+      distinctUntilChanged())
   }
 
   xlArtwork(url) {

@@ -1,11 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import {startWith} from 'rxjs/operators/startWith';
-import {map} from 'rxjs/operators/map';
-import {filter} from 'rxjs/operators/filter';
-import {debounceTime} from 'rxjs/operators/debounceTime'
-import {flatMap} from 'rxjs/operators'
+import { Observable } from 'rxjs';
+import {map, filter, debounceTime} from 'rxjs/operators'
 
 @Component({
   selector: 'app-music-search-component',
